@@ -1,0 +1,6 @@
+framework module Pods_LGResStudyDemo {
+  umbrella header "Pods-LGResStudyDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
