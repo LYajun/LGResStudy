@@ -12,6 +12,7 @@
 #import "RLGCommon.h"
 #import <MJExtension/MJExtension.h>
 #import "RLGResponseModel.h"
+#import "RLGWordModel.h"
 
 static CGFloat timeoutInterval = 15;
 @interface RLGHttpClient ()
@@ -74,9 +75,45 @@ static CGFloat timeoutInterval = 15;
             });
         }else{
             NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            RLGResponseModel *responseModel = [RLGResponseModel mj_objectWithKeyValues:dic];
-            if ([weakSelf.responder respondsToSelector:@selector(success:)]) {
-                [weakSelf.responder success:responseModel];
+            if (RLG_IsEmpty(dic)) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([weakSelf.responder respondsToSelector:@selector(failure:)]) {
+                        [weakSelf.responder failure:[NSError errorWithDomain:@"RLGErrorDamain" code:10010 userInfo:@{NSLocalizedDescriptionKey:@"数据为空"}]];
+                    }
+                });
+                return;
+            }
+            if ([dic.allKeys containsObject:@"cwName"]) {
+                RLGWordModel *wordModel = [RLGWordModel mj_objectWithKeyValues:dic];
+                NSMutableArray *senArr = [NSMutableArray array];
+                for (CxCollectionModel *cxModel in wordModel.cxCollection) {
+                    for (MeanCollectionModel *meanModel in cxModel.meanCollection) {
+                        if (!RLG_IsEmpty(meanModel.senCollection)) {
+                            [senArr addObjectsFromArray:meanModel.senCollection];
+                        }
+                    }
+                }
+                if (senArr.count > 0) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if ([weakSelf.responder respondsToSelector:@selector(success:)]) {
+                            [weakSelf.responder success:wordModel];
+                        }
+                    });
+                }else{
+                    RLG_Log(@"查询失败");
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if ([weakSelf.responder respondsToSelector:@selector(failure:)]) {
+                            [weakSelf.responder failure:[NSError errorWithDomain:@"RLGErrorDamain" code:10010 userInfo:@{NSLocalizedDescriptionKey:@"查询失败"}]];
+                        }
+                    });
+                }
+            }else{
+                RLGResponseModel *responseModel = [RLGResponseModel mj_objectWithKeyValues:dic];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    if ([weakSelf.responder respondsToSelector:@selector(success:)]) {
+                        [weakSelf.responder success:responseModel];
+                    }
+                });
             }
         }
     }];

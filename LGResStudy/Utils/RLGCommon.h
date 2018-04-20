@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "RLGConfig.h"
 
 BOOL RLG_IsEmpty(id obj);
 
 NSString *RLG_GETBundleResource(NSString *fileName);
 UIColor *RLG_Color(NSInteger hex);
-NSAttributedString *RLG_AttributedString(NSString *htmlStr,CGFloat font);
+NSMutableAttributedString *RLG_AttributedString(NSString *htmlStr,CGFloat font);
 void RLG_Log(NSString *msg);
 CGFloat RLG_ScreenWidth(void);
 CGFloat RLG_ScreenHeight(void);
 CGFloat RLG_NaviBarHeight(UIViewController *vc);
+RLGConfig *LGResConfig(void);
+UIViewController *LGResStudyController(void);
+BOOL RLG_PredicateMatch(NSString *text,NSString *matchFormat);
+NSArray *RLG_VoiceGifs(void);
+UIColor *RLG_ThemeColor(void);
+NSString *RLG_Time(NSInteger timeCount);

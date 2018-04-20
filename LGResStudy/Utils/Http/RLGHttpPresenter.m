@@ -8,7 +8,7 @@
 
 #import "RLGHttpPresenter.h"
 #import "RLGHttpResponseProtocol.h"
-#import "RLGHttpClient.h"
+
 
 @interface RLGHttpPresenter ()<RLGHttpResponseProtocol>
 

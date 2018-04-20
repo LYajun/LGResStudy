@@ -7,3 +7,5 @@
 //
 
 
+#import "RLGResStudyViewController.h"
+#import "RLGCommon.h"

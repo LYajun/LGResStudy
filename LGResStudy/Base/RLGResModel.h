@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger,RLGResType){
+    text,           // 文本类
+    voice,          // 声文类
+    video,          // 视文类
+    unknow          // 不支持类
+};
+
+
 @interface RLGResVideoModel : NSObject
 @property (nonatomic,copy) NSString *SenID;
 @property (nonatomic,copy) NSString *OrgID;
@@ -22,6 +30,7 @@
 
 @interface RLGResContentModel : NSObject
 @property (nonatomic,copy) NSString *ResContent;
+@property (nonatomic,strong) NSMutableAttributedString *ResContent_attr;
 @property (nonatomic,copy) NSString *ResTranContent;
 @property (nonatomic,copy) NSString *ResMediaPath;
 @property (nonatomic,copy) NSString *ResMediaLength;
@@ -58,4 +67,8 @@
 @property (nonatomic,assign) NSInteger StudyTime;
 
 @property (nonatomic,strong) NSArray<RLGResContentModel *> *Reslist;
+
+- (RLGResType)rlgResType;
+- (NSArray *)rlgSegmentTitles;
+- (NSArray *)rlgImporKnTexts;
 @end

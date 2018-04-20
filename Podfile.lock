@@ -1,24 +1,30 @@
 PODS:
   - LGAlertUtil (1.0.5)
+  - LGDic (1.0.3):
+    - Masonry
+    - MJExtension
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
 
 DEPENDENCIES:
   - LGAlertUtil
+  - LGDic
   - Masonry
   - MJExtension
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - LGAlertUtil
+    - LGDic
     - Masonry
     - MJExtension
 
 SPEC CHECKSUMS:
   LGAlertUtil: 9dce434b6a553b29c96ccac3be4242ef5e69b304
+  LGDic: ae3984b023a703526869dc64388da999f970f642
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
 
-PODFILE CHECKSUM: b460a6dc7022d433f2ac6ddaf8e94f8710735394
+PODFILE CHECKSUM: 9fa3637aee206dd6b8c77ce0254ad2474e4e2e6f
 
 COCOAPODS: 1.5.0

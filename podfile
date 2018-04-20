@@ -5,4 +5,5 @@ target 'LGResStudyDemo’ do
 pod 'Masonry'
 pod 'MJExtension'
 pod 'LGAlertUtil'
+pod 'LGDic'
 end

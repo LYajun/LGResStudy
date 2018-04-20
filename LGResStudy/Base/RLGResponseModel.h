@@ -18,5 +18,5 @@
 /** 类型 */
 @property (nonatomic,copy) NSString *ContentType;
 /** 数据 */
-@property (nonatomic,assign) id Data;
+@property (nonatomic,strong) id Data;
 @end

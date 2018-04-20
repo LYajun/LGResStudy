@@ -8,7 +8,8 @@
 
 #import "RLGPresenter.h"
 
-@class RLGHttpClient;
+#import "RLGHttpClient.h"
+
 @interface RLGHttpPresenter : RLGPresenter
 @property (nonatomic,strong)RLGHttpClient *httpClient;
 @end

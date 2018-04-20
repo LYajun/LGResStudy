@@ -21,10 +21,27 @@
 		BA3B79A82084A48F00C451DA /* RLGCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79A72084A48F00C451DA /* RLGCommon.m */; };
 		BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79AA2084C20E00C451DA /* RLGHttpClient.m */; };
 		BA3B79AE2084C40800C451DA /* RLGHttpPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79AD2084C40800C451DA /* RLGHttpPresenter.m */; };
-		BA3B79B12084C8AC00C451DA /* LGResStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79B02084C8AC00C451DA /* LGResStudyViewController.m */; };
+		BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79B02084C8AC00C451DA /* RLGResStudyViewController.m */; };
 		BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79B82084CC2300C451DA /* RLGActivityIndicatorAnimation.m */; };
 		BA3B79BD2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79BA2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m */; };
 		BA3B79BE2084CC2300C451DA /* RLGActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79BB2084CC2300C451DA /* RLGActivityIndicatorView.m */; };
+		BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79C3208599C300C451DA /* RLGConfig.m */; };
+		BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79C62085A51000C451DA /* RLGResStudyPresenter.m */; };
+		BA3B79CB2085BFCF00C451DA /* RLGTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79CA2085BFCF00C451DA /* RLGTextViewController.m */; };
+		BA3B79D02085F1A000C451DA /* RLGTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79CF2085F1A000C451DA /* RLGTextView.m */; };
+		BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79D52086F42300C451DA /* RLGWordModel.m */; };
+		BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79D92086F60A00C451DA /* RLGTextPresenter.m */; };
+		BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DC2087138D00C451DA /* RLGTextWordView.m */; };
+		BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */; };
+		BAF4639F20888E6B00B386BD /* RLGStudyOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */; };
+		BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A120888F3C00B386BD /* RLGTipButton.m */; };
+		BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A72088941500B386BD /* RLGTextOperateView.m */; };
+		BAF463AB2088BBAC00B386BD /* RLGRecordListView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463AA2088BBAC00B386BD /* RLGRecordListView.m */; };
+		BAF463AE2088BBCC00B386BD /* RLGImportantWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463AD2088BBCC00B386BD /* RLGImportantWordView.m */; };
+		BAF463B12089DB1100B386BD /* RLGTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463B02089DB1100B386BD /* RLGTouchView.m */; };
+		BAF463B42089DFD000B386BD /* RLGPopupMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463B32089DFD000B386BD /* RLGPopupMenu.m */; };
+		BAFBF66F2088282500EC3FCA /* RLGAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBF66E2088282500EC3FCA /* RLGAudioRecorder.m */; };
+		BAFBF67220884B2100EC3FCA /* RLGWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFBF67020884B2000EC3FCA /* RLGWeakTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +72,8 @@
 		BA3B79AA2084C20E00C451DA /* RLGHttpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGHttpClient.m; sourceTree = "<group>"; };
 		BA3B79AC2084C40800C451DA /* RLGHttpPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGHttpPresenter.h; sourceTree = "<group>"; };
 		BA3B79AD2084C40800C451DA /* RLGHttpPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGHttpPresenter.m; sourceTree = "<group>"; };
-		BA3B79AF2084C8AC00C451DA /* LGResStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGResStudyViewController.h; sourceTree = "<group>"; };
-		BA3B79B02084C8AC00C451DA /* LGResStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGResStudyViewController.m; sourceTree = "<group>"; };
+		BA3B79AF2084C8AC00C451DA /* RLGResStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGResStudyViewController.h; sourceTree = "<group>"; };
+		BA3B79B02084C8AC00C451DA /* RLGResStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGResStudyViewController.m; sourceTree = "<group>"; };
 		BA3B79B42084CC2300C451DA /* RLGActivityIndicatorAnimationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGActivityIndicatorAnimationProtocol.h; sourceTree = "<group>"; };
 		BA3B79B52084CC2300C451DA /* RLGActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGActivityIndicatorView.h; sourceTree = "<group>"; };
 		BA3B79B72084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGActivityIndicatorBallPulseAnimation.h; sourceTree = "<group>"; };
@@ -64,6 +81,41 @@
 		BA3B79B92084CC2300C451DA /* RLGActivityIndicatorAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGActivityIndicatorAnimation.h; sourceTree = "<group>"; };
 		BA3B79BA2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGActivityIndicatorBallPulseAnimation.m; sourceTree = "<group>"; };
 		BA3B79BB2084CC2300C451DA /* RLGActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGActivityIndicatorView.m; sourceTree = "<group>"; };
+		BA3B79C2208599C300C451DA /* RLGConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGConfig.h; sourceTree = "<group>"; };
+		BA3B79C3208599C300C451DA /* RLGConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGConfig.m; sourceTree = "<group>"; };
+		BA3B79C52085A51000C451DA /* RLGResStudyPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGResStudyPresenter.h; sourceTree = "<group>"; };
+		BA3B79C62085A51000C451DA /* RLGResStudyPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGResStudyPresenter.m; sourceTree = "<group>"; };
+		BA3B79C92085BFCF00C451DA /* RLGTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTextViewController.h; sourceTree = "<group>"; };
+		BA3B79CA2085BFCF00C451DA /* RLGTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextViewController.m; sourceTree = "<group>"; };
+		BA3B79CC2085C56400C451DA /* RLGViewTransferProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGViewTransferProtocol.h; sourceTree = "<group>"; };
+		BA3B79CE2085F1A000C451DA /* RLGTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTextView.h; sourceTree = "<group>"; };
+		BA3B79CF2085F1A000C451DA /* RLGTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextView.m; sourceTree = "<group>"; };
+		BA3B79D42086F42200C451DA /* RLGWordModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGWordModel.h; sourceTree = "<group>"; };
+		BA3B79D52086F42300C451DA /* RLGWordModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGWordModel.m; sourceTree = "<group>"; };
+		BA3B79D82086F60A00C451DA /* RLGTextPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTextPresenter.h; sourceTree = "<group>"; };
+		BA3B79D92086F60A00C451DA /* RLGTextPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextPresenter.m; sourceTree = "<group>"; };
+		BA3B79DB2087138D00C451DA /* RLGTextWordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTextWordView.h; sourceTree = "<group>"; };
+		BA3B79DC2087138D00C451DA /* RLGTextWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextWordView.m; sourceTree = "<group>"; };
+		BA3B79DE208715ED00C451DA /* RLGVoicePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoicePlayer.h; sourceTree = "<group>"; };
+		BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoicePlayer.m; sourceTree = "<group>"; };
+		BAF4639D20888E6B00B386BD /* RLGStudyOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGStudyOperateView.h; sourceTree = "<group>"; };
+		BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGStudyOperateView.m; sourceTree = "<group>"; };
+		BAF463A020888F3C00B386BD /* RLGTipButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTipButton.h; sourceTree = "<group>"; };
+		BAF463A120888F3C00B386BD /* RLGTipButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTipButton.m; sourceTree = "<group>"; };
+		BAF463A62088941500B386BD /* RLGTextOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTextOperateView.h; sourceTree = "<group>"; };
+		BAF463A72088941500B386BD /* RLGTextOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextOperateView.m; sourceTree = "<group>"; };
+		BAF463A92088BBAC00B386BD /* RLGRecordListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGRecordListView.h; sourceTree = "<group>"; };
+		BAF463AA2088BBAC00B386BD /* RLGRecordListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGRecordListView.m; sourceTree = "<group>"; };
+		BAF463AC2088BBCC00B386BD /* RLGImportantWordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGImportantWordView.h; sourceTree = "<group>"; };
+		BAF463AD2088BBCC00B386BD /* RLGImportantWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGImportantWordView.m; sourceTree = "<group>"; };
+		BAF463AF2089DB1100B386BD /* RLGTouchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTouchView.h; sourceTree = "<group>"; };
+		BAF463B02089DB1100B386BD /* RLGTouchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTouchView.m; sourceTree = "<group>"; };
+		BAF463B22089DFD000B386BD /* RLGPopupMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGPopupMenu.h; sourceTree = "<group>"; };
+		BAF463B32089DFD000B386BD /* RLGPopupMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGPopupMenu.m; sourceTree = "<group>"; };
+		BAFBF66D2088282500EC3FCA /* RLGAudioRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGAudioRecorder.h; sourceTree = "<group>"; };
+		BAFBF66E2088282500EC3FCA /* RLGAudioRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGAudioRecorder.m; sourceTree = "<group>"; };
+		BAFBF67020884B2000EC3FCA /* RLGWeakTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGWeakTimer.m; sourceTree = "<group>"; };
+		BAFBF67120884B2000EC3FCA /* RLGWeakTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGWeakTimer.h; sourceTree = "<group>"; };
 		E81CE2432B3AA7AD439B43D4 /* Pods-LGResStudyDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LGResStudyDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LGResStudyDemo/Pods-LGResStudyDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,10 +180,11 @@
 			children = (
 				BA3B79742084753700C451DA /* LGResStudy.h */,
 				BA3B7977208475D200C451DA /* Base */,
-				BA3B79752084754A00C451DA /* Utils */,
+				BA3B79BF208596A900C451DA /* Home */,
 				BA3B7971208471E100C451DA /* Video */,
 				BA3B7972208471E100C451DA /* Voice */,
 				BA3B7973208471E100C451DA /* Text */,
+				BA3B79752084754A00C451DA /* Utils */,
 				BA3B79782084767E00C451DA /* LGResStudy.bundle */,
 			);
 			path = LGResStudy;
@@ -154,6 +207,10 @@
 		BA3B7973208471E100C451DA /* Text */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B79D72086F54C00C451DA /* Presenter */,
+				BA3B79D32086F41800C451DA /* Model */,
+				BA3B79CD2085F16B00C451DA /* View */,
+				BA3B79C82085BF5F00C451DA /* Controller */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -161,10 +218,18 @@
 		BA3B79752084754A00C451DA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BAF463B22089DFD000B386BD /* RLGPopupMenu.h */,
+				BAF463B32089DFD000B386BD /* RLGPopupMenu.m */,
+				BAFBF67120884B2000EC3FCA /* RLGWeakTimer.h */,
+				BAFBF67020884B2000EC3FCA /* RLGWeakTimer.m */,
 				BA3B79B32084CC2300C451DA /* ActivityIndicatorView */,
 				BA3B79A62084A48E00C451DA /* RLGCommon.h */,
 				BA3B79A72084A48F00C451DA /* RLGCommon.m */,
 				BA3B7976208475AD00C451DA /* Http */,
+				BA3B79DE208715ED00C451DA /* RLGVoicePlayer.h */,
+				BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */,
+				BAFBF66D2088282500EC3FCA /* RLGAudioRecorder.h */,
+				BAFBF66E2088282500EC3FCA /* RLGAudioRecorder.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -184,14 +249,21 @@
 		BA3B7977208475D200C451DA /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BA3B79CC2085C56400C451DA /* RLGViewTransferProtocol.h */,
 				BA3B797A20847D0300C451DA /* RLGResponseModel.h */,
 				BA3B797B20847D0300C451DA /* RLGResponseModel.m */,
 				BA3B799F2084856700C451DA /* RLGResModel.h */,
 				BA3B79A02084856700C451DA /* RLGResModel.m */,
 				BA3B79A220849F3C00C451DA /* RLGPresenter.h */,
 				BA3B79A320849F3C00C451DA /* RLGPresenter.m */,
-				BA3B79AF2084C8AC00C451DA /* LGResStudyViewController.h */,
-				BA3B79B02084C8AC00C451DA /* LGResStudyViewController.m */,
+				BA3B79C2208599C300C451DA /* RLGConfig.h */,
+				BA3B79C3208599C300C451DA /* RLGConfig.m */,
+				BAF4639D20888E6B00B386BD /* RLGStudyOperateView.h */,
+				BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */,
+				BAF463A020888F3C00B386BD /* RLGTipButton.h */,
+				BAF463A120888F3C00B386BD /* RLGTipButton.m */,
+				BAF463AF2089DB1100B386BD /* RLGTouchView.h */,
+				BAF463B02089DB1100B386BD /* RLGTouchView.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -216,6 +288,77 @@
 				BA3B79B82084CC2300C451DA /* RLGActivityIndicatorAnimation.m */,
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		BA3B79BF208596A900C451DA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79C12085972300C451DA /* Presenter */,
+				BA3B79C02085971300C451DA /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BA3B79C02085971300C451DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79AF2084C8AC00C451DA /* RLGResStudyViewController.h */,
+				BA3B79B02084C8AC00C451DA /* RLGResStudyViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA3B79C12085972300C451DA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79C52085A51000C451DA /* RLGResStudyPresenter.h */,
+				BA3B79C62085A51000C451DA /* RLGResStudyPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BA3B79C82085BF5F00C451DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79C92085BFCF00C451DA /* RLGTextViewController.h */,
+				BA3B79CA2085BFCF00C451DA /* RLGTextViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA3B79CD2085F16B00C451DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79CE2085F1A000C451DA /* RLGTextView.h */,
+				BA3B79CF2085F1A000C451DA /* RLGTextView.m */,
+				BA3B79DB2087138D00C451DA /* RLGTextWordView.h */,
+				BA3B79DC2087138D00C451DA /* RLGTextWordView.m */,
+				BAF463A62088941500B386BD /* RLGTextOperateView.h */,
+				BAF463A72088941500B386BD /* RLGTextOperateView.m */,
+				BAF463A92088BBAC00B386BD /* RLGRecordListView.h */,
+				BAF463AA2088BBAC00B386BD /* RLGRecordListView.m */,
+				BAF463AC2088BBCC00B386BD /* RLGImportantWordView.h */,
+				BAF463AD2088BBCC00B386BD /* RLGImportantWordView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA3B79D32086F41800C451DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79D42086F42200C451DA /* RLGWordModel.h */,
+				BA3B79D52086F42300C451DA /* RLGWordModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA3B79D72086F54C00C451DA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BA3B79D82086F60A00C451DA /* RLGTextPresenter.h */,
+				BA3B79D92086F60A00C451DA /* RLGTextPresenter.m */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		EFB50D0BC246D8621CB1127E /* Frameworks */ = {
@@ -303,12 +446,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LGResStudyDemo/Pods-LGResStudyDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LGAlertUtil/LGAlertUtil.framework",
+				"${BUILT_PRODUCTS_DIR}/LGDic/LGDic.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGAlertUtil.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LGDic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 			);
@@ -343,18 +488,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */,
+				BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */,
+				BAFBF67220884B2100EC3FCA /* RLGWeakTimer.m in Sources */,
+				BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */,
 				BA3B795E2084513800C451DA /* ViewController.m in Sources */,
-				BA3B79B12084C8AC00C451DA /* LGResStudyViewController.m in Sources */,
+				BA3B79D02085F1A000C451DA /* RLGTextView.m in Sources */,
+				BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */,
 				BA3B79692084513900C451DA /* main.m in Sources */,
 				BA3B795B2084513700C451DA /* AppDelegate.m in Sources */,
 				BA3B79AE2084C40800C451DA /* RLGHttpPresenter.m in Sources */,
+				BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */,
+				BAF463AE2088BBCC00B386BD /* RLGImportantWordView.m in Sources */,
+				BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */,
 				BA3B79A420849F3C00C451DA /* RLGPresenter.m in Sources */,
 				BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */,
 				BA3B79A12084856700C451DA /* RLGResModel.m in Sources */,
+				BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */,
+				BA3B79CB2085BFCF00C451DA /* RLGTextViewController.m in Sources */,
+				BAFBF66F2088282500EC3FCA /* RLGAudioRecorder.m in Sources */,
 				BA3B79A82084A48F00C451DA /* RLGCommon.m in Sources */,
+				BAF4639F20888E6B00B386BD /* RLGStudyOperateView.m in Sources */,
+				BAF463AB2088BBAC00B386BD /* RLGRecordListView.m in Sources */,
 				BA3B797C20847D0300C451DA /* RLGResponseModel.m in Sources */,
 				BA3B79BD2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m in Sources */,
+				BAF463B42089DFD000B386BD /* RLGPopupMenu.m in Sources */,
+				BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */,
 				BA3B79BE2084CC2300C451DA /* RLGActivityIndicatorView.m in Sources */,
+				BAF463B12089DB1100B386BD /* RLGTouchView.m in Sources */,
+				BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */,
+				BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,13 +660,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.LGResStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -516,13 +676,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.LGResStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
