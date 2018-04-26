@@ -20,14 +20,6 @@
 @property (nonatomic,strong) AVPlayer *player;
 @end
 @implementation RLGVoicePlayer
-+ (RLGVoicePlayer *)shareInstance{
-    static RLGVoicePlayer * macro = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        macro = [[RLGVoicePlayer alloc] init];
-    });
-    return macro;
-}
 #pragma mark public
 - (void)play{
     wIsPlaying = YES;
@@ -46,19 +38,24 @@
     [self removeObserverFromPlayerItem:self.player.currentItem];
     [self removeNotification];
 }
-- (void)seekToTime:(float)time{
+- (void)seekToTime:(float)time isPlay:(BOOL) isPlay{
     [self pause];
     __weak typeof(self) weakSelf = self;
     CMTime cmTime = CMTimeMakeWithSeconds(time, self.player.currentTime.timescale);
     [self.player seekToTime:cmTime completionHandler:^(BOOL finished) {
         // 拖动结束后音乐重新播放
         if (finished) {
-            [weakSelf play];
             if (weakSelf.SeekFinishBlock) {
                 weakSelf.SeekFinishBlock();
             }
+            if (isPlay) {
+                [weakSelf play];
+            }
         }
     }];
+}
+- (void)seekToTime:(float)time{
+    [self seekToTime:time isPlay:YES];
 }
 - (BOOL)isPlaying{
     return wIsPlaying;
@@ -75,6 +72,9 @@
     [self setplayerWithUrl:[NSURL fileURLWithPath:path]];
 }
 - (void)setplayerWithUrl:(NSURL *) url{
+    if (self.PlayStartBlock) {
+        self.PlayStartBlock();
+    }
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *sessionError;
     [session setCategory:AVAudioSessionCategoryPlayback error:&sessionError];
@@ -92,15 +92,18 @@
 -(void)addNotification{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleEndTimeNotification:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stop) name:RLGStopPlayerNotification object:nil];
 }
 -(void)removeNotification{
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:RLGStopPlayerNotification object:nil];
 }
 - (void)applicationDidEnterBackground:(NSNotification *) noti{
     [self pause];
 }
 - (void)handleEndTimeNotification:(NSNotification *) noti{
+    wIsPlaying = NO;
     if (self.PlayFinishBlock) {
         self.PlayFinishBlock();
     }
@@ -110,11 +113,15 @@
     [RLGVoicePlayer yj_addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil atObj:playerItem];
     //监控网络加载情况属性
     [RLGVoicePlayer yj_addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil atObj:playerItem];
-    
+    //播放已经消耗了所有缓冲的媒体和回放将停止或结束
+    [RLGVoicePlayer yj_addObserver:self forKeyPath:@"playbackBufferEmpty" options:NSKeyValueObservingOptionNew context:nil atObj:playerItem];
+    [RLGVoicePlayer yj_addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil atObj:playerItem];
 }
 -(void)removeObserverFromPlayerItem:(AVPlayerItem *)playerItem{
     [RLGVoicePlayer yj_removeObserver:self forKeyPath:@"status" atObj:playerItem];
     [RLGVoicePlayer yj_removeObserver:self forKeyPath:@"loadedTimeRanges" atObj:playerItem];
+    [RLGVoicePlayer yj_removeObserver:self forKeyPath:@"playbackBufferEmpty" atObj:playerItem];
+     [RLGVoicePlayer yj_removeObserver:self forKeyPath:@"playbackLikelyToKeepUp" atObj:playerItem];
     [playerItem cancelPendingSeeks];
     [playerItem.asset cancelLoading];
 }
@@ -129,6 +136,8 @@
                 self.TotalDurationBlock(duration);
             }
         }else{// 失败
+            wIsPlaying = NO;
+            [self stop];
             if (self.PlayFailBlock) {
                 self.PlayFailBlock();
             }
@@ -141,6 +150,21 @@
         NSTimeInterval totalBuffer = startSeconds + durationSeconds;//缓冲总长度
         if (self.TotalBufferBlock) {
             self.TotalBufferBlock(totalBuffer);
+        }
+    }else if ([keyPath isEqualToString:@"playbackBufferEmpty"]){
+        if (playerItem.playbackBufferEmpty) {
+            NSLog(@"bufEmpty--YES");
+        }else{
+            NSLog(@"bufEmpty---NO");
+        }
+    }else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]){
+        if (playerItem.playbackLikelyToKeepUp) {
+            NSLog(@"keepUp--YES");
+        }else{
+            NSLog(@"keepUp---NO");
+        }
+        if (self.PlaybackLikelyToKeepUpBlock) {
+            self.PlaybackLikelyToKeepUpBlock(playerItem.playbackLikelyToKeepUp);
         }
     }
 }

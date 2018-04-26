@@ -35,6 +35,7 @@
 @property (strong, nonatomic) UIImageView *enPlayGifImage;
 @property (strong, nonatomic) UIImageView *usPlayGifImage;
 @property (strong, nonatomic) RLGWordModel *wordModel;
+@property (strong, nonatomic) RLGVoicePlayer *voicePlayer;
 @end
 @implementation RLGTextWordView
 - (instancetype)initWithFrame:(CGRect)frame{
@@ -47,10 +48,10 @@
 - (void)initUI{
      self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
     __weak typeof(self) weakSelf = self;
-    [RLGVoicePlayer shareInstance].PlayFinishBlock = ^{
+    self.voicePlayer.PlayFinishBlock = ^{
         [weakSelf stopGif];
     };
-    [RLGVoicePlayer shareInstance].PlayFailBlock = ^{
+    self.voicePlayer.PlayFailBlock = ^{
         [weakSelf stopGif];
     };
 }
@@ -127,7 +128,7 @@
     }];
 }
 - (void)hide{
-    [[RLGVoicePlayer shareInstance] stop];
+    [self.voicePlayer stop];
     [UIView animateWithDuration:0.2 animations:^{
         self.alpha = 0;
     } completion:^(BOOL finished) {
@@ -136,25 +137,25 @@
 }
 - (void)enVoiceAction{
     [self.usPlayGifImage stopAnimating];
-    [[RLGVoicePlayer shareInstance] pause];
+    [self.voicePlayer pause];
     if (LGResConfig().appendDomain) {
-        [[RLGVoicePlayer shareInstance] setPlayerWithUrlString:[LGResConfig().voiceUrl stringByAppendingString:self.wordModel.unPVoice]];
+        [self.voicePlayer setPlayerWithUrlString:[LGResConfig().voiceUrl stringByAppendingString:self.wordModel.unPVoice]];
     }else{
-        [[RLGVoicePlayer shareInstance] setPlayerWithUrlString:self.wordModel.unPVoice];
+        [self.voicePlayer setPlayerWithUrlString:self.wordModel.unPVoice];
     }
-    [[RLGVoicePlayer shareInstance] play];
+    [self.voicePlayer play];
     self.enPlayGifImage.hidden = NO;
     [self.enPlayGifImage startAnimating];
 }
 - (void)usVoiceAction{
     [self.enPlayGifImage stopAnimating];
-    [[RLGVoicePlayer shareInstance] pause];
+    [self.voicePlayer pause];
     if (LGResConfig().appendDomain) {
-        [[RLGVoicePlayer shareInstance] setPlayerWithUrlString:[LGResConfig().voiceUrl stringByAppendingString:self.wordModel.usPVoice]];
+        [self.voicePlayer setPlayerWithUrlString:[LGResConfig().voiceUrl stringByAppendingString:self.wordModel.usPVoice]];
     }else{
-        [[RLGVoicePlayer shareInstance] setPlayerWithUrlString:self.wordModel.usPVoice];
+        [self.voicePlayer setPlayerWithUrlString:self.wordModel.usPVoice];
     }
-    [[RLGVoicePlayer shareInstance] play];
+    [self.voicePlayer play];
     self.usPlayGifImage.hidden = NO;
     [self.usPlayGifImage startAnimating];
 }
@@ -165,6 +166,12 @@
     [self.usPlayGifImage stopAnimating];
 }
 #pragma mark getter
+- (RLGVoicePlayer *)voicePlayer{
+    if (!_voicePlayer) {
+        _voicePlayer = [[RLGVoicePlayer alloc] init];
+    }
+    return _voicePlayer;
+}
 - (UITextView *)textView{
     if (!_textView) {
         _textView = [UITextView new];

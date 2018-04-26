@@ -25,3 +25,9 @@ BOOL RLG_PredicateMatch(NSString *text,NSString *matchFormat);
 NSArray *RLG_VoiceGifs(void);
 UIColor *RLG_ThemeColor(void);
 NSString *RLG_Time(NSInteger timeCount);
+
+
+static NSString *RLGStopPlayerNotification = @"RLGStopPlayerNotification";
+void RLG_StopPlayer(void);
+void RLG_MicrophoneAuthorization(void);
+BOOL RLG_GetMicrophoneAuthorization(void);

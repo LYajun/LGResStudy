@@ -41,6 +41,9 @@
 
 /** 笔记工具入口 */
 @property (nonatomic,copy) void (^NoteEntryBlock) (void);
+
+/** 初始化语音评测 */
+- (void)initSpeechEngine;
 + (RLGConfig *)shareInstance;
 - (NSDictionary *)configParams;
 @end

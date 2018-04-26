@@ -24,33 +24,21 @@
 }
 @property(nonatomic,strong) RLGWeakTimer *timer;
 @property (nonatomic,assign) NSInteger timeCount;
-@property (nonatomic,assign)  BOOL authorization;
 @end
 @implementation RLGAudioRecorder
-+ (RLGAudioRecorder *)shareInstance{
-    static RLGAudioRecorder * macro = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        macro = [[RLGAudioRecorder alloc]init];
-    });
-    return macro;
-}
 - (instancetype)init{
     if (self = [super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopPlayerNotification:) name:RLGStopPlayerNotification object:nil];
     }
     return self;
 }
 #pragma mark public
-- (void)microphoneAuthorization{
-    __weak typeof(self) weakSelf = self;
-    [self checkCameraAuthorizationGrand:^{
-        weakSelf.authorization = YES;
-    } withNoPermission:^{
-        weakSelf.authorization = NO;
-    }];
+- (void)stopPlayerNotification:(NSNotification *) noti{
+    [self stop];
+    [self stopPlay];
 }
 - (void)record{
-    if (!self.authorization) {
+    if (!RLG_GetMicrophoneAuthorization()) {
         [LGAlert alertWarningWithMessage:@"录音失败,麦克风权限未打开" confirmTitle:@"我知道了" confirmBlock:nil];
         if (self.RecorderOccurErrorBlock) {
             self.RecorderOccurErrorBlock();
@@ -205,34 +193,6 @@
     }
 }
 #pragma mark private
-- (void)checkCameraAuthorizationGrand:(void (^)(void))permissionGranted withNoPermission:(void (^)(void))noPermission{
-    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
-    switch (authStatus) {
-        case AVAuthorizationStatusNotDetermined:
-        {
-            //第一次提示用户授权
-            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
-                granted ? permissionGranted() : noPermission();
-            }];
-            break;
-        }
-        case AVAuthorizationStatusAuthorized:
-        {
-            //通过授权
-            permissionGranted();
-            break;
-        }
-        case AVAuthorizationStatusRestricted:
-            //不能授权
-            NSLog(@"不能完成授权，可能开启了访问限制");
-        case AVAuthorizationStatusDenied:{
-            //提示跳转到设置
-        }
-            break;
-        default:
-            break;
-    }
-}
 - (RLGWeakTimer *)timer{
     if (!_timer) {
          _timer = [RLGWeakTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerAction) userInfo:nil repeats:YES dispatchQueue:dispatch_queue_create("LGResStudyTimerQueue", DISPATCH_QUEUE_CONCURRENT)];
@@ -258,11 +218,11 @@
     NSDate *date= [NSDate date];
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyyMMddHHmmss"];
-    return [NSString stringWithFormat:@"%@.caf",[dateformatter stringFromDate:date]];
+    return [NSString stringWithFormat:@"%@.wav",[dateformatter stringFromDate:date]];
 }
 - (NSDictionary *)recordConfig{
     NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
-    //设置录音格式.caf
+    //设置录音格式.wav
     [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
     //设置录音采样率，8000是电话采样率，对于一般录音已经够了
     [dicM setObject:@(8000) forKey:AVSampleRateKey];

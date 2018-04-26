@@ -8,6 +8,8 @@
 
 #import "RLGCommon.h"
 #import "RLGResStudyViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 BOOL RLG_IsEmpty(id obj){
     if (obj == nil) return YES;
@@ -107,3 +109,45 @@ NSString *RLG_Time(NSInteger timeCount){
         return [NSString stringWithFormat:@"%02li:%02li:%02li",hour,minute,second];
     }
 }
+void RLG_StopPlayer(void){
+    [[NSNotificationCenter defaultCenter] postNotificationName:RLGStopPlayerNotification object:nil userInfo:nil];
+}
+void RLG_MicrophoneAuthorization(void){
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+    void (^permissionGranted)(void) = ^{
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"micAuthorization"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    };
+    void (^noPermission)(void) = ^{
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"micAuthorization"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    };
+    switch (authStatus) {
+        case AVAuthorizationStatusNotDetermined:
+        {
+            //第一次提示用户授权
+            [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
+                granted ? permissionGranted() : noPermission();
+            }];
+            break;
+        }
+        case AVAuthorizationStatusAuthorized:
+        {
+            //通过授权
+            permissionGranted();
+            break;
+        }
+        case AVAuthorizationStatusRestricted:
+            //不能授权
+            NSLog(@"不能完成授权，可能开启了访问限制");
+        case AVAuthorizationStatusDenied:
+            noPermission();
+            break;
+        default:
+            break;
+    }
+}
+BOOL RLG_GetMicrophoneAuthorization(void){
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"micAuthorization"];
+}
+

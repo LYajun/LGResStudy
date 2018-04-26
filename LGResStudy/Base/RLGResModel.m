@@ -10,7 +10,10 @@
 #import "RLGCommon.h"
 
 @implementation RLGResVideoModel
-
+- (void)setEtext:(NSString *)Etext{
+    _Etext = Etext;
+    _Etext_attr = RLG_AttributedString(Etext, 16);
+}
 @end
 @implementation RLGResContentModel
 + (NSDictionary *)mj_objectClassInArray{

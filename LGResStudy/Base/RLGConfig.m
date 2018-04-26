@@ -7,6 +7,7 @@
 //
 
 #import "RLGConfig.h"
+#import "RLGSpeechEngine.h"
 
 @implementation RLGConfig
 + (RLGConfig *)shareInstance{
@@ -25,5 +26,8 @@
              @"Source":(_Source ? _Source:@""),
              @"PlanID":@""
              };
+}
+- (void)initSpeechEngine{
+    [[RLGSpeechEngine shareInstance] initEngine];
 }
 @end

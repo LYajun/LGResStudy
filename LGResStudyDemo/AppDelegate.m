@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LGResStudy.h"
 @interface AppDelegate ()
 
 @end
@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"lg_navBar_bg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+   [LGResConfig() initSpeechEngine];
     // Override point for customization after application launch.
     return YES;
 }

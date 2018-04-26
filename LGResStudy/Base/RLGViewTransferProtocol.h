@@ -18,4 +18,8 @@
 /** 重要知识点查询 */
 - (void)selectImporKnText:(NSString *) text;
 - (void)updateWordModel:(id) wordModel;
+
+/** 声文资料 */
+- (void)playToIndex:(NSInteger) index;
+- (void)speechDidFinish;
 @end

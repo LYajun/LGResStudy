@@ -33,8 +33,7 @@
 @property (nonatomic,copy) void (^PlayerFinishBlock) (void);
 @property (nonatomic,copy) void (^PlayerOccurError) (void);
 @property (nonatomic,copy) void (^RemoveRecordBlock) (void);
-+ (RLGAudioRecorder *)shareInstance;
-- (void)microphoneAuthorization;
+
 /** 开始录音 */
 - (void)record;
 /** 停止 */

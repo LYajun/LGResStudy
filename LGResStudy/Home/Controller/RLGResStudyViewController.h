@@ -6,14 +6,11 @@
 //  Copyright © 2018年 刘亚军. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RLGBaseViewController.h"
 
 
-@interface RLGResStudyViewController : UIViewController
+@interface RLGResStudyViewController : RLGBaseViewController
 
 
-- (void)setViewLoadingShow:(BOOL)show;
-@property (nonatomic,copy) NSString *noDataText;
-- (void)setViewNoDataShow:(BOOL)show;
-- (void)setViewLoadErrorShow:(BOOL)show;
+
 @end

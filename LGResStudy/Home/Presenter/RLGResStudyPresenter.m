@@ -14,10 +14,12 @@
 #import "RLGResModel.h"
 #import <MJExtension/MJExtension.h>
 #import "RLGViewTransferProtocol.h"
+#import "RLGVoiceViewController.h"
 
 @interface RLGResStudyPresenter ()
 {
     RLGTextViewController *wTextVC;
+    RLGVoiceViewController *wVoiceVC;
 }
 @end
 @implementation RLGResStudyPresenter
@@ -35,7 +37,11 @@
         }
             break;
         case voice:
-            
+        {
+            if ([wVoiceVC respondsToSelector:@selector(studyModelChangeAtIndex:)]) {
+                [wVoiceVC studyModelChangeAtIndex:index];
+            }
+        }
             break;
         case video:
             
@@ -59,7 +65,15 @@
         }
             break;
         case voice:
-            
+        {
+            wVoiceVC = [[RLGVoiceViewController alloc] init];
+            wVoiceVC.view.frame = CGRectMake(0, 0, RLG_ScreenWidth(), RLG_ScreenHeight()- RLG_NaviBarHeight(self.view));
+            [studyVC.view addSubview:wVoiceVC.view];
+            [studyVC addChildViewController:wVoiceVC];
+            if ([wVoiceVC respondsToSelector:@selector(updateData:)]) {
+                [wVoiceVC updateData:resModel];
+            }
+        }
             break;
         case video:
             

@@ -13,8 +13,8 @@
 @property (nonatomic, copy) NSString *sentenceEn;
 @property (nonatomic, copy) NSString *sViocePath;
 @property (nonatomic, copy) NSString *sTranslation;
-//@property (nonatomic, strong,readonly) NSAttributedString *sentenceEn_attr; // 新增
-//@property (nonatomic, strong,readonly) NSAttributedString *sTranslation_attr; // 新增
+@property (nonatomic, strong,readonly) NSAttributedString *sentenceEn_attr; // 新增
+@property (nonatomic, strong,readonly) NSAttributedString *sTranslation_attr; // 新增
 @end
 
 @interface ColtCollectionModel : NSObject
@@ -73,5 +73,5 @@
 
 
 - (NSString *)wordChineseMean;
-
+- (NSArray *)wordSenCollection;
 @end

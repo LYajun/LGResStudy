@@ -10,5 +10,6 @@
 
 @interface RLGRecordListView : UIView
 @property (nonatomic,copy) void (^DismissBlock) (void);
+
 + (instancetype)showRecordListView;
 @end

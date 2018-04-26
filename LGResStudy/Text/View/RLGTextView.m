@@ -10,7 +10,7 @@
 #import "RLGCommon.h"
 
 
-@interface RLGTextView ()<UITextViewDelegate>
+@interface RLGTextView ()<UITextViewDelegate,UIGestureRecognizerDelegate>
 {
     NSArray *wImporKnTexts;
 }
@@ -22,6 +22,8 @@
     }
     return self;
 }
+
+
 - (void)setTextAttribute:(NSMutableAttributedString *)textAttribute withImporKnTexts:(NSArray *)imporKnTexts{
     wImporKnTexts = imporKnTexts;
     NSMutableAttributedString *attr = textAttribute.mutableCopy;
@@ -32,7 +34,7 @@
             NSRange range = [attr.string rangeOfString:substr];
             NSInteger index = [imporKnTexts indexOfObject:substr];
             [attr addAttribute:NSLinkAttributeName value:[NSString stringWithFormat:@"text://%li",index] range:range];
-            [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:range];
+            [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:range];
             [attr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:range];
             [attr addAttribute:NSUnderlineColorAttributeName value:RLG_ThemeColor() range:range];
         }else{
@@ -50,11 +52,12 @@
                 index = [imporKnTexts indexOfObject:substring.uppercaseString];
             }
             [attr addAttribute:NSLinkAttributeName value:[NSString stringWithFormat:@"text://%li",index] range:substringRange];
-            [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:20] range:substringRange];
+            [attr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:18] range:substringRange];
             [attr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSUnderlineStyleSingle] range:substringRange];
             [attr addAttribute:NSUnderlineColorAttributeName value:RLG_ThemeColor() range:substringRange];
         }
     }];
+    [attr addAttribute:NSForegroundColorAttributeName value:[UIColor darkGrayColor] range:NSMakeRange(0,attr.length)];
     self.attributedText = attr;
 }
 - (BOOL)textView:(UITextView *)textView shouldInteractWithURL:(NSURL *)URL inRange:(NSRange)characterRange{
@@ -65,6 +68,11 @@
             [self.ownController selectImporKnText:word];
         }
     }
+    return NO;
+}
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    
+    NSLog(@"9435345349589304859035");
     return NO;
 }
 //  iOS 10.0 or newer

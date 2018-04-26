@@ -15,9 +15,10 @@
 @property (nonatomic,copy) void (^TotalBufferBlock) (CGFloat totalBuffer);
 @property (nonatomic,copy) void (^PlayProgressBlock) (CGFloat progress);
 @property (nonatomic,copy) void (^PlayFinishBlock) (void);
+@property (nonatomic,copy) void (^PlayStartBlock) (void);
 @property (nonatomic,copy) void (^SeekFinishBlock) (void);
 @property (nonatomic,copy) void (^PlayFailBlock) (void);
-
+@property (nonatomic,copy) void (^PlaybackLikelyToKeepUpBlock) (BOOL isKeepUp);
 
 /** 播放 */
 - (void)play;
@@ -30,10 +31,10 @@
 - (void)setPlayerWithPath:(NSString *)path;
 /** 在指定时间播放 */
 - (void)seekToTime:(float) time;
+- (void)seekToTime:(float)time isPlay:(BOOL) isPlay;
 /** 判断当前音乐是否正在播放 */
 - (BOOL)isPlaying;
 /** 判断是否正在播放指定的音乐 */
 - (BOOL)isPlayingWithUrl:(NSString *)urlString;
 
-+ (RLGVoicePlayer *)shareInstance;
 @end

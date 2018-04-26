@@ -33,6 +33,30 @@
 		BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79D92086F60A00C451DA /* RLGTextPresenter.m */; };
 		BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DC2087138D00C451DA /* RLGTextWordView.m */; };
 		BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */; };
+		BA8F1D0C209055BF009B6CDD /* RLGVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D0B209055BF009B6CDD /* RLGVoiceViewController.m */; };
+		BA8F1D0F2090568B009B6CDD /* RLGVoiceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D0E2090568B009B6CDD /* RLGVoiceTable.m */; };
+		BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D112090577C009B6CDD /* RLGVoiceTableCell.m */; };
+		BA8F1D1520905D4D009B6CDD /* RLGVoiceTableHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D1420905D4D009B6CDD /* RLGVoiceTableHeader.m */; };
+		BA8F1D182090601B009B6CDD /* RLGVoiceOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D172090601B009B6CDD /* RLGVoiceOperateView.m */; };
+		BA8F1D1E2090787F009B6CDD /* RLGTapTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D1D2090787F009B6CDD /* RLGTapTableView.m */; };
+		BA8F1D212091A907009B6CDD /* RLGSpeechTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D202091A907009B6CDD /* RLGSpeechTipView.m */; };
+		BAC35A51208E02420040B251 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC35A50208E02420040B251 /* libz.1.tbd */; };
+		BAC35A6D208F0B550040B251 /* native.res in Resources */ = {isa = PBXBuildFile; fileRef = BAC35A61208F0B540040B251 /* native.res */; };
+		BAC35A6E208F0B550040B251 /* skeng-ios in Resources */ = {isa = PBXBuildFile; fileRef = BAC35A62208F0B540040B251 /* skeng-ios */; };
+		BAC35A6F208F0B550040B251 /* skegn.provision in Resources */ = {isa = PBXBuildFile; fileRef = BAC35A63208F0B540040B251 /* skegn.provision */; };
+		BAC35A70208F0B550040B251 /* libskegn-2-ios-1.0.8-20170726120101.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC35A64208F0B540040B251 /* libskegn-2-ios-1.0.8-20170726120101.a */; };
+		BAC35A71208F0B550040B251 /* skeng-ios in Resources */ = {isa = PBXBuildFile; fileRef = BAC35A65208F0B540040B251 /* skeng-ios */; };
+		BAC35A72208F0B550040B251 /* airecorder.c in Sources */ = {isa = PBXBuildFile; fileRef = BAC35A69208F0B540040B251 /* airecorder.c */; };
+		BAC35A73208F0B550040B251 /* aiplayer.c in Sources */ = {isa = PBXBuildFile; fileRef = BAC35A6A208F0B540040B251 /* aiplayer.c */; };
+		BAC35A7E208F13F00040B251 /* RLGSpeechEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = BAC35A7D208F13F00040B251 /* RLGSpeechEngine.mm */; };
+		BAC35A83208F18FD0040B251 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC35A56208E02740040B251 /* SystemConfiguration.framework */; };
+		BAC35A84208F191E0040B251 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC35A5A208E028D0040B251 /* Accelerate.framework */; };
+		BAC35A87208F2B640040B251 /* TestEngineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC35A86208F2B640040B251 /* TestEngineViewController.m */; };
+		BAC35A89208F54060040B251 /* TestEngineViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAC35A88208F54060040B251 /* TestEngineViewController.xib */; };
+		BAC9F189208CB04300E2EB0B /* RLGWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F188208CB04300E2EB0B /* RLGWordViewController.m */; };
+		BAC9F18C208CB11C00E2EB0B /* RLGWordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F18B208CB11C00E2EB0B /* RLGWordHeaderView.m */; };
+		BAC9F18F208CB3B200E2EB0B /* RLGWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F18E208CB3B200E2EB0B /* RLGWordCell.m */; };
+		BAC9F192208CC39300E2EB0B /* RLGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F191208CC39300E2EB0B /* RLGBaseViewController.m */; };
 		BAF4639F20888E6B00B386BD /* RLGStudyOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */; };
 		BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A120888F3C00B386BD /* RLGTipButton.m */; };
 		BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A72088941500B386BD /* RLGTextOperateView.m */; };
@@ -98,6 +122,50 @@
 		BA3B79DC2087138D00C451DA /* RLGTextWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextWordView.m; sourceTree = "<group>"; };
 		BA3B79DE208715ED00C451DA /* RLGVoicePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoicePlayer.h; sourceTree = "<group>"; };
 		BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoicePlayer.m; sourceTree = "<group>"; };
+		BA8F1D0A209055BF009B6CDD /* RLGVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceViewController.h; sourceTree = "<group>"; };
+		BA8F1D0B209055BF009B6CDD /* RLGVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceViewController.m; sourceTree = "<group>"; };
+		BA8F1D0D2090568B009B6CDD /* RLGVoiceTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceTable.h; sourceTree = "<group>"; };
+		BA8F1D0E2090568B009B6CDD /* RLGVoiceTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceTable.m; sourceTree = "<group>"; };
+		BA8F1D102090577C009B6CDD /* RLGVoiceTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceTableCell.h; sourceTree = "<group>"; };
+		BA8F1D112090577C009B6CDD /* RLGVoiceTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceTableCell.m; sourceTree = "<group>"; };
+		BA8F1D1320905D4D009B6CDD /* RLGVoiceTableHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceTableHeader.h; sourceTree = "<group>"; };
+		BA8F1D1420905D4D009B6CDD /* RLGVoiceTableHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceTableHeader.m; sourceTree = "<group>"; };
+		BA8F1D162090601B009B6CDD /* RLGVoiceOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceOperateView.h; sourceTree = "<group>"; };
+		BA8F1D172090601B009B6CDD /* RLGVoiceOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceOperateView.m; sourceTree = "<group>"; };
+		BA8F1D1C2090787F009B6CDD /* RLGTapTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTapTableView.h; sourceTree = "<group>"; };
+		BA8F1D1D2090787F009B6CDD /* RLGTapTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTapTableView.m; sourceTree = "<group>"; };
+		BA8F1D1F2091A907009B6CDD /* RLGSpeechTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGSpeechTipView.h; sourceTree = "<group>"; };
+		BA8F1D202091A907009B6CDD /* RLGSpeechTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGSpeechTipView.m; sourceTree = "<group>"; };
+		BAC35A50208E02420040B251 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		BAC35A52208E02520040B251 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BAC35A54208E02660040B251 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BAC35A56208E02740040B251 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BAC35A58208E027E0040B251 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BAC35A5A208E028D0040B251 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BAC35A61208F0B540040B251 /* native.res */ = {isa = PBXFileReference; lastKnownFileType = file; path = native.res; sourceTree = "<group>"; };
+		BAC35A62208F0B540040B251 /* skeng-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "skeng-ios"; sourceTree = "<group>"; };
+		BAC35A63208F0B540040B251 /* skegn.provision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skegn.provision; sourceTree = "<group>"; };
+		BAC35A64208F0B540040B251 /* libskegn-2-ios-1.0.8-20170726120101.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libskegn-2-ios-1.0.8-20170726120101.a"; sourceTree = "<group>"; };
+		BAC35A65208F0B540040B251 /* skeng-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "skeng-ios"; sourceTree = "<group>"; };
+		BAC35A66208F0B540040B251 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
+		BAC35A68208F0B540040B251 /* aiplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiplayer.h; sourceTree = "<group>"; };
+		BAC35A69208F0B540040B251 /* airecorder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = airecorder.c; sourceTree = "<group>"; };
+		BAC35A6A208F0B540040B251 /* aiplayer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiplayer.c; sourceTree = "<group>"; };
+		BAC35A6B208F0B540040B251 /* airecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = airecorder.h; sourceTree = "<group>"; };
+		BAC35A6C208F0B540040B251 /* wavehdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavehdr.h; sourceTree = "<group>"; };
+		BAC35A7C208F13F00040B251 /* RLGSpeechEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGSpeechEngine.h; sourceTree = "<group>"; };
+		BAC35A7D208F13F00040B251 /* RLGSpeechEngine.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RLGSpeechEngine.mm; sourceTree = "<group>"; };
+		BAC35A85208F2B640040B251 /* TestEngineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestEngineViewController.h; sourceTree = "<group>"; };
+		BAC35A86208F2B640040B251 /* TestEngineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestEngineViewController.m; sourceTree = "<group>"; };
+		BAC35A88208F54060040B251 /* TestEngineViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestEngineViewController.xib; sourceTree = "<group>"; };
+		BAC9F187208CB04300E2EB0B /* RLGWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGWordViewController.h; sourceTree = "<group>"; };
+		BAC9F188208CB04300E2EB0B /* RLGWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGWordViewController.m; sourceTree = "<group>"; };
+		BAC9F18A208CB11C00E2EB0B /* RLGWordHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGWordHeaderView.h; sourceTree = "<group>"; };
+		BAC9F18B208CB11C00E2EB0B /* RLGWordHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGWordHeaderView.m; sourceTree = "<group>"; };
+		BAC9F18D208CB3B200E2EB0B /* RLGWordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGWordCell.h; sourceTree = "<group>"; };
+		BAC9F18E208CB3B200E2EB0B /* RLGWordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGWordCell.m; sourceTree = "<group>"; };
+		BAC9F190208CC39300E2EB0B /* RLGBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGBaseViewController.h; sourceTree = "<group>"; };
+		BAC9F191208CC39300E2EB0B /* RLGBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGBaseViewController.m; sourceTree = "<group>"; };
 		BAF4639D20888E6B00B386BD /* RLGStudyOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGStudyOperateView.h; sourceTree = "<group>"; };
 		BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGStudyOperateView.m; sourceTree = "<group>"; };
 		BAF463A020888F3C00B386BD /* RLGTipButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTipButton.h; sourceTree = "<group>"; };
@@ -124,6 +192,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC35A84208F191E0040B251 /* Accelerate.framework in Frameworks */,
+				BAC35A83208F18FD0040B251 /* SystemConfiguration.framework in Frameworks */,
+				BAC35A70208F0B550040B251 /* libskegn-2-ios-1.0.8-20170726120101.a in Frameworks */,
+				BAC35A51208E02420040B251 /* libz.1.tbd in Frameworks */,
 				3DDEA7CB5850D84A094D9A8B /* Pods_LGResStudyDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +237,9 @@
 				BA3B795A2084513700C451DA /* AppDelegate.m */,
 				BA3B795C2084513700C451DA /* ViewController.h */,
 				BA3B795D2084513800C451DA /* ViewController.m */,
+				BAC35A85208F2B640040B251 /* TestEngineViewController.h */,
+				BAC35A86208F2B640040B251 /* TestEngineViewController.m */,
+				BAC35A88208F54060040B251 /* TestEngineViewController.xib */,
 				BA3B795F2084513800C451DA /* Main.storyboard */,
 				BA3B79622084513900C451DA /* Assets.xcassets */,
 				BA3B79642084513900C451DA /* LaunchScreen.storyboard */,
@@ -185,6 +260,7 @@
 				BA3B7972208471E100C451DA /* Voice */,
 				BA3B7973208471E100C451DA /* Text */,
 				BA3B79752084754A00C451DA /* Utils */,
+				BAC35A3A208DFF640040B251 /* Libs */,
 				BA3B79782084767E00C451DA /* LGResStudy.bundle */,
 			);
 			path = LGResStudy;
@@ -200,6 +276,10 @@
 		BA3B7972208471E100C451DA /* Voice */ = {
 			isa = PBXGroup;
 			children = (
+				BA8F1D0820905587009B6CDD /* Controller */,
+				BA8F1D0620905587009B6CDD /* Model */,
+				BA8F1D0720905587009B6CDD /* Presenter */,
+				BA8F1D0920905587009B6CDD /* View */,
 			);
 			path = Voice;
 			sourceTree = "<group>";
@@ -222,14 +302,15 @@
 				BAF463B32089DFD000B386BD /* RLGPopupMenu.m */,
 				BAFBF67120884B2000EC3FCA /* RLGWeakTimer.h */,
 				BAFBF67020884B2000EC3FCA /* RLGWeakTimer.m */,
-				BA3B79B32084CC2300C451DA /* ActivityIndicatorView */,
 				BA3B79A62084A48E00C451DA /* RLGCommon.h */,
 				BA3B79A72084A48F00C451DA /* RLGCommon.m */,
-				BA3B7976208475AD00C451DA /* Http */,
 				BA3B79DE208715ED00C451DA /* RLGVoicePlayer.h */,
 				BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */,
 				BAFBF66D2088282500EC3FCA /* RLGAudioRecorder.h */,
 				BAFBF66E2088282500EC3FCA /* RLGAudioRecorder.m */,
+				BAC35A7B208F13CA0040B251 /* SpeechEngine */,
+				BA3B79B32084CC2300C451DA /* ActivityIndicatorView */,
+				BA3B7976208475AD00C451DA /* Http */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,6 +345,8 @@
 				BAF463A120888F3C00B386BD /* RLGTipButton.m */,
 				BAF463AF2089DB1100B386BD /* RLGTouchView.h */,
 				BAF463B02089DB1100B386BD /* RLGTouchView.m */,
+				BAC9F190208CC39300E2EB0B /* RLGBaseViewController.h */,
+				BAC9F191208CC39300E2EB0B /* RLGBaseViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -322,6 +405,8 @@
 			children = (
 				BA3B79C92085BFCF00C451DA /* RLGTextViewController.h */,
 				BA3B79CA2085BFCF00C451DA /* RLGTextViewController.m */,
+				BAC9F187208CB04300E2EB0B /* RLGWordViewController.h */,
+				BAC9F188208CB04300E2EB0B /* RLGWordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +424,10 @@
 				BAF463AA2088BBAC00B386BD /* RLGRecordListView.m */,
 				BAF463AC2088BBCC00B386BD /* RLGImportantWordView.h */,
 				BAF463AD2088BBCC00B386BD /* RLGImportantWordView.m */,
+				BAC9F18A208CB11C00E2EB0B /* RLGWordHeaderView.h */,
+				BAC9F18B208CB11C00E2EB0B /* RLGWordHeaderView.m */,
+				BAC9F18D208CB3B200E2EB0B /* RLGWordCell.h */,
+				BAC9F18E208CB3B200E2EB0B /* RLGWordCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,9 +450,108 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		BA8F1D0620905587009B6CDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA8F1D0720905587009B6CDD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BA8F1D0820905587009B6CDD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F1D0A209055BF009B6CDD /* RLGVoiceViewController.h */,
+				BA8F1D0B209055BF009B6CDD /* RLGVoiceViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA8F1D0920905587009B6CDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA8F1D0D2090568B009B6CDD /* RLGVoiceTable.h */,
+				BA8F1D0E2090568B009B6CDD /* RLGVoiceTable.m */,
+				BA8F1D102090577C009B6CDD /* RLGVoiceTableCell.h */,
+				BA8F1D112090577C009B6CDD /* RLGVoiceTableCell.m */,
+				BA8F1D1320905D4D009B6CDD /* RLGVoiceTableHeader.h */,
+				BA8F1D1420905D4D009B6CDD /* RLGVoiceTableHeader.m */,
+				BA8F1D162090601B009B6CDD /* RLGVoiceOperateView.h */,
+				BA8F1D172090601B009B6CDD /* RLGVoiceOperateView.m */,
+				BA8F1D1C2090787F009B6CDD /* RLGTapTableView.h */,
+				BA8F1D1D2090787F009B6CDD /* RLGTapTableView.m */,
+				BA8F1D1F2091A907009B6CDD /* RLGSpeechTipView.h */,
+				BA8F1D202091A907009B6CDD /* RLGSpeechTipView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAC35A3A208DFF640040B251 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				BAC35A3B208DFF8F0040B251 /* ShengTong */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		BAC35A3B208DFF8F0040B251 /* ShengTong */ = {
+			isa = PBXGroup;
+			children = (
+				BAC35A67208F0B540040B251 /* audio */,
+				BAC35A60208F0B540040B251 /* skegn-ios */,
+				BAC35A66208F0B540040B251 /* skegn.h */,
+				BAC35A65208F0B540040B251 /* skeng-ios */,
+			);
+			path = ShengTong;
+			sourceTree = "<group>";
+		};
+		BAC35A60208F0B540040B251 /* skegn-ios */ = {
+			isa = PBXGroup;
+			children = (
+				BAC35A61208F0B540040B251 /* native.res */,
+				BAC35A62208F0B540040B251 /* skeng-ios */,
+				BAC35A63208F0B540040B251 /* skegn.provision */,
+				BAC35A64208F0B540040B251 /* libskegn-2-ios-1.0.8-20170726120101.a */,
+			);
+			path = "skegn-ios";
+			sourceTree = "<group>";
+		};
+		BAC35A67208F0B540040B251 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				BAC35A68208F0B540040B251 /* aiplayer.h */,
+				BAC35A69208F0B540040B251 /* airecorder.c */,
+				BAC35A6A208F0B540040B251 /* aiplayer.c */,
+				BAC35A6B208F0B540040B251 /* airecorder.h */,
+				BAC35A6C208F0B540040B251 /* wavehdr.h */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		BAC35A7B208F13CA0040B251 /* SpeechEngine */ = {
+			isa = PBXGroup;
+			children = (
+				BAC35A7C208F13F00040B251 /* RLGSpeechEngine.h */,
+				BAC35A7D208F13F00040B251 /* RLGSpeechEngine.mm */,
+			);
+			path = SpeechEngine;
+			sourceTree = "<group>";
+		};
 		EFB50D0BC246D8621CB1127E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BAC35A5A208E028D0040B251 /* Accelerate.framework */,
+				BAC35A58208E027E0040B251 /* CFNetwork.framework */,
+				BAC35A56208E02740040B251 /* SystemConfiguration.framework */,
+				BAC35A54208E02660040B251 /* Security.framework */,
+				BAC35A52208E02520040B251 /* AudioToolbox.framework */,
+				BAC35A50208E02420040B251 /* libz.1.tbd */,
 				6372146B7DD222326AE223EF /* Pods_LGResStudyDemo.framework */,
 			);
 			name = Frameworks;
@@ -428,9 +616,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC35A6D208F0B550040B251 /* native.res in Resources */,
+				BAC35A71208F0B550040B251 /* skeng-ios in Resources */,
+				BAC35A6E208F0B550040B251 /* skeng-ios in Resources */,
+				BAC35A6F208F0B550040B251 /* skegn.provision in Resources */,
 				BA3B79662084513900C451DA /* LaunchScreen.storyboard in Resources */,
 				BA3B79632084513900C451DA /* Assets.xcassets in Resources */,
 				BA3B79612084513800C451DA /* Main.storyboard in Resources */,
+				BAC35A89208F54060040B251 /* TestEngineViewController.xib in Resources */,
 				BA3B79792084767E00C451DA /* LGResStudy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,32 +680,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8F1D1520905D4D009B6CDD /* RLGVoiceTableHeader.m in Sources */,
 				BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */,
 				BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */,
+				BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */,
+				BA8F1D212091A907009B6CDD /* RLGSpeechTipView.m in Sources */,
 				BAFBF67220884B2100EC3FCA /* RLGWeakTimer.m in Sources */,
+				BA8F1D1E2090787F009B6CDD /* RLGTapTableView.m in Sources */,
 				BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */,
 				BA3B795E2084513800C451DA /* ViewController.m in Sources */,
+				BA8F1D0F2090568B009B6CDD /* RLGVoiceTable.m in Sources */,
 				BA3B79D02085F1A000C451DA /* RLGTextView.m in Sources */,
+				BAC35A87208F2B640040B251 /* TestEngineViewController.m in Sources */,
 				BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */,
 				BA3B79692084513900C451DA /* main.m in Sources */,
 				BA3B795B2084513700C451DA /* AppDelegate.m in Sources */,
 				BA3B79AE2084C40800C451DA /* RLGHttpPresenter.m in Sources */,
 				BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */,
 				BAF463AE2088BBCC00B386BD /* RLGImportantWordView.m in Sources */,
+				BAC9F18F208CB3B200E2EB0B /* RLGWordCell.m in Sources */,
+				BAC9F189208CB04300E2EB0B /* RLGWordViewController.m in Sources */,
 				BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */,
 				BA3B79A420849F3C00C451DA /* RLGPresenter.m in Sources */,
 				BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */,
 				BA3B79A12084856700C451DA /* RLGResModel.m in Sources */,
 				BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */,
+				BA8F1D0C209055BF009B6CDD /* RLGVoiceViewController.m in Sources */,
 				BA3B79CB2085BFCF00C451DA /* RLGTextViewController.m in Sources */,
+				BAC9F18C208CB11C00E2EB0B /* RLGWordHeaderView.m in Sources */,
 				BAFBF66F2088282500EC3FCA /* RLGAudioRecorder.m in Sources */,
 				BA3B79A82084A48F00C451DA /* RLGCommon.m in Sources */,
 				BAF4639F20888E6B00B386BD /* RLGStudyOperateView.m in Sources */,
 				BAF463AB2088BBAC00B386BD /* RLGRecordListView.m in Sources */,
+				BAC35A7E208F13F00040B251 /* RLGSpeechEngine.mm in Sources */,
 				BA3B797C20847D0300C451DA /* RLGResponseModel.m in Sources */,
 				BA3B79BD2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m in Sources */,
 				BAF463B42089DFD000B386BD /* RLGPopupMenu.m in Sources */,
 				BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */,
+				BA8F1D182090601B009B6CDD /* RLGVoiceOperateView.m in Sources */,
+				BAC9F192208CC39300E2EB0B /* RLGBaseViewController.m in Sources */,
+				BAC35A73208F0B550040B251 /* aiplayer.c in Sources */,
+				BAC35A72208F0B550040B251 /* airecorder.c in Sources */,
 				BA3B79BE2084CC2300C451DA /* RLGActivityIndicatorView.m in Sources */,
 				BAF463B12089DB1100B386BD /* RLGTouchView.m in Sources */,
 				BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */,
@@ -661,7 +869,15 @@
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LGResStudy/Libs/ShengTong",
+					"$(PROJECT_DIR)/LGResStudy/Libs/ShengTong/skegn-ios",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.LGResStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -677,7 +893,15 @@
 				DEVELOPMENT_TEAM = Z35S33J39R;
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LGResStudy/Libs/ShengTong",
+					"$(PROJECT_DIR)/LGResStudy/Libs/ShengTong/skegn-ios",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lancoo.LGResStudyDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

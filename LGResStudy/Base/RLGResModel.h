@@ -25,6 +25,7 @@ typedef NS_ENUM(NSInteger,RLGResType){
 @property (nonatomic,copy) NSString *Ehtml;
 @property (nonatomic,copy) NSString *Chtml;
 @property (nonatomic,copy) NSString *Etext;
+@property (nonatomic,strong) NSMutableAttributedString *Etext_attr;
 @property (nonatomic,copy) NSString *Ctext;
 @end
 

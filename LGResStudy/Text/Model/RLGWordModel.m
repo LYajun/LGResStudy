@@ -10,14 +10,14 @@
 #import "RLGCommon.h"
 
 @implementation SenCollectionModel
-//-(void)setSentenceEn:(NSString *)sentenceEn{
-//    _sentenceEn = sentenceEn;
-//    _sentenceEn_attr = RLG_AttributedString(sentenceEn, 15);
-//}
-//-(void)setSTranslation:(NSString *)sTranslation{
-//    _sTranslation = sTranslation;
-//    _sTranslation_attr = RLG_AttributedString(sTranslation, 14);
-//}
+-(void)setSentenceEn:(NSString *)sentenceEn{
+    _sentenceEn = sentenceEn;
+    _sentenceEn_attr = RLG_AttributedString(sentenceEn, 15);
+}
+-(void)setSTranslation:(NSString *)sTranslation{
+    _sTranslation = sTranslation;
+    _sTranslation_attr = RLG_AttributedString(sTranslation, 14);
+}
 @end
 
 @implementation ColtCollectionModel
@@ -100,5 +100,16 @@
         i++;
     }
     return meaning;
+}
+- (NSArray *)wordSenCollection{
+    NSMutableArray *senArr = [NSMutableArray array];
+    for (CxCollectionModel *cxModel in self.cxCollection) {
+        for (MeanCollectionModel *meanModel in cxModel.meanCollection) {
+            if (!RLG_IsEmpty(meanModel.senCollection)) {
+                [senArr addObjectsFromArray:meanModel.senCollection];
+            }
+        }
+    }
+    return senArr;
 }
 @end

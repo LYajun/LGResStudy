@@ -18,6 +18,7 @@
 @property (nonatomic,strong) UIButton *recordBtn;
 @property (nonatomic,strong) RLGTipButton *microBtn;
 @property (nonatomic,strong) UILabel *stateL;
+@property (nonatomic,strong) RLGAudioRecorder *recorder;
 @end
 @implementation RLGTextOperateView
 
@@ -50,23 +51,23 @@
         make.right.equalTo(self.microBtn.mas_left).offset(-20);
     }];
     __weak typeof(self) weakSelf = self;
-    [RLGAudioRecorder shareInstance].RecorderFinishBlock = ^{
+    self.recorder.RecorderFinishBlock = ^{
         [weakSelf updateInfo];
         weakSelf.stateL.text = @"";
         weakSelf.recordBtn.selected = NO;
         [LGAlert showStatus:@"录音完成"];
     };
-    [RLGAudioRecorder shareInstance].RecorderOccurErrorBlock = ^{
+    self.recorder.RecorderOccurErrorBlock = ^{
         weakSelf.recordBtn.selected = NO;
         weakSelf.stateL.text = @"";
         [LGAlert showRedStatus:@"录音失败"];
     };
-    [RLGAudioRecorder shareInstance].RecordTimeBlock = ^(NSInteger recordTime) {
+    self.recorder.RecordTimeBlock = ^(NSInteger recordTime) {
         weakSelf.stateL.text = [NSString stringWithFormat:@"录音中%@",RLG_Time(recordTime)];
     };
 }
 - (void)updateInfo{
-    NSArray *records = [RLGAudioRecorder shareInstance].recordFiles;
+    NSArray *records = self.recorder.recordFiles;
     if (RLG_IsEmpty(records)) {
         self.microBtn.tipEnable = NO;
     }else{
@@ -77,12 +78,13 @@
 #pragma mark action
 - (void)playClickAction:(UIButton *) btn{
     if (btn.selected) {
-        [[RLGAudioRecorder shareInstance] stop];
+        btn.selected = NO;
+        [self.recorder stop];
     }else{
+        btn.selected = YES;
         self.stateL.text = @"准备录音";
-        [[RLGAudioRecorder shareInstance] record];
+        [self.recorder record];
     }
-    btn.selected = !btn.selected;
 }
 - (void)microClickAction:(UIButton *) btn{
     self.recordBtn.selected = YES;
@@ -94,6 +96,12 @@
     };
 }
 #pragma mark getter
+- (RLGAudioRecorder *)recorder{
+    if (!_recorder) {
+        _recorder = [[RLGAudioRecorder alloc] init];
+    }
+    return _recorder;
+}
 - (UIButton *)recordBtn{
     if (!_recordBtn) {
         _recordBtn = [UIButton buttonWithType:UIButtonTypeCustom];

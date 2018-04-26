@@ -14,7 +14,6 @@
 #import "RLGTextPresenter.h"
 #import "RLGCommon.h"
 #import "RLGTextWordView.h"
-#import "RLGVoicePlayer.h"
 #import "RLGAudioRecorder.h"
 #import "RLGTextOperateView.h"
 
@@ -23,6 +22,7 @@
 @property (nonatomic,strong) RLGResModel *resModel;
 @property (nonatomic,strong) RLGTextPresenter *presenter;
 @property (nonatomic,strong) RLGTextOperateView *operateView;
+
 @end
 
 @implementation RLGTextViewController
@@ -32,13 +32,10 @@
     [self initUI];
 }
 - (void)dealloc{
-    [[RLGVoicePlayer shareInstance] stop];
     RLG_Log(@"RLGTextViewController dealloc");
 }
 - (void)initUI{
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    [[RLGAudioRecorder shareInstance] recordURLAssets];
 }
 - (void)layoutUI{
     [self.view addSubview:self.operateView];
@@ -59,7 +56,7 @@
     [self layoutUI];
 }
 - (void)selectImporKnText:(NSString *)text{
-    [[RLGAudioRecorder shareInstance] stop];
+    RLG_StopPlayer();
     [self.presenter startRequestWithWord:text];
 }
 - (void)studyModelChangeAtIndex:(NSInteger)index{
@@ -71,7 +68,7 @@
             }];
         }];
     }else{
-        [[RLGAudioRecorder shareInstance] microphoneAuthorization];
+        RLG_MicrophoneAuthorization();
         [UIView animateWithDuration:0.2 animations:^{
             [weakSelf.operateView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.mas_equalTo(44);

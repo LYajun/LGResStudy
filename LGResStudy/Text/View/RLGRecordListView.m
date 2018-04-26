@@ -110,6 +110,7 @@
 @property(nonatomic,strong) UILabel *titleL;
 @property(nonatomic,strong) NSArray *recordArr;
 @property(nonatomic,strong) NSIndexPath *indexP;
+@property (nonatomic,strong) RLGAudioRecorder *player;
 @end
 
 @implementation RLGRecordListView
@@ -123,7 +124,7 @@
 - (void)initUI{
     self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
     __weak typeof(self) weakSelf = self;
-    [RLGAudioRecorder shareInstance].PlayerFinishBlock = ^{
+    self.player.PlayerFinishBlock = ^{
         RLGRecordCell *cell = [weakSelf.tableView cellForRowAtIndexPath:weakSelf.indexP];
         cell.isPlay = NO;
     };
@@ -159,7 +160,7 @@
 }
 + (instancetype)showRecordListView{
     RLGRecordListView *listView = [[RLGRecordListView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    listView.recordArr = [RLGAudioRecorder shareInstance].recordURLAssets;
+    listView.recordArr = listView.player.recordURLAssets;
     [listView updateInfo];
     [listView show];
     return listView;
@@ -185,7 +186,7 @@
     if (self.DismissBlock) {
         self.DismissBlock();
     }
-    [[RLGAudioRecorder shareInstance] stopPlay];
+    [self.player stopPlay];
     __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.2 animations:^{
         weakSelf.alertView.transform = CGAffineTransformIdentity;
@@ -205,8 +206,8 @@
 }
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
      RLGAudioModel *model = self.recordArr[indexPath.row];
-    [[RLGAudioRecorder shareInstance] removeRecordFileAtPath:model.path];
-    self.recordArr = [RLGAudioRecorder shareInstance].recordURLAssets;
+    [self.player removeRecordFileAtPath:model.path];
+    self.recordArr = self.player.recordURLAssets;
     [self updateInfo];
      [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
 }
@@ -219,7 +220,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RLGRecordCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RLGRecordCell class]) forIndexPath:indexPath];
     RLGAudioModel *model = self.recordArr[indexPath.row];
-    cell.isPlay = [[RLGAudioRecorder shareInstance] isPlayAtPath:model.path];
+    cell.isPlay = [self.player isPlayAtPath:model.path];
     cell.titleL.text = [NSString stringWithFormat:@"我的录音%02li",indexPath.row+1];
     cell.timeL.text = model.createTime;
     cell.durationL.text = RLG_Time(model.duration);
@@ -230,17 +231,23 @@
     RLGRecordCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     RLGAudioModel *model = self.recordArr[indexPath.row];
     if (self.indexP && ![cell isEqual:[tableView cellForRowAtIndexPath: self.indexP]]) {
-        [[RLGAudioRecorder shareInstance] stopPlay];
+        [self.player stopPlay];
         RLGRecordCell *cell1 = [tableView cellForRowAtIndexPath: self.indexP];
         cell1.isPlay = NO;
     }
     if (cell.isPlay) {
-        [[RLGAudioRecorder shareInstance] stopPlay];
+        [self.player stopPlay];
     }else{
-        [[RLGAudioRecorder shareInstance] playAtPath:model.path];
+        [self.player playAtPath:model.path];
     }
     cell.isPlay = !cell.isPlay;
     self.indexP = indexPath;
+}
+- (RLGAudioRecorder *)player{
+    if (!_player) {
+        _player = [[RLGAudioRecorder alloc] init];
+    }
+    return _player;
 }
 - (UILabel *)titleL{
     if (!_titleL) {
