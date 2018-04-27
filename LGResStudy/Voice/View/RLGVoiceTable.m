@@ -71,6 +71,7 @@
     RLGResVideoModel *videoModel = contentModel.VideoTrainSynInfo[index];
     RLGSpeechTipView *tipView = [[RLGSpeechTipView alloc] initWithFrame:CGRectMake((RLG_ScreenWidth()-160)/2, cell.frame.origin.y-cell.frame.size.height/2, 160, 40) refText:videoModel.Etext recordTime:videoModel.Timelength.floatValue / 1000 + 2];
     [self addSubview:tipView];
+    self.userInteractionEnabled = NO;
     __weak typeof(self) weakSelf = self;
     tipView.speechFinishBlock = ^{
         if ([weakSelf.ownController respondsToSelector:@selector(speechDidFinish)]) {
@@ -81,6 +82,7 @@
     self.speechTipView = tipView;
 }
 - (void)hideSpeechTipView{
+    self.userInteractionEnabled = YES;
     if (self.speechTipView) {
         [self.speechTipView removeFromSuperview];
         self.speechTipView = nil;

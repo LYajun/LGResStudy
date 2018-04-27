@@ -65,23 +65,24 @@ typedef NS_ENUM(NSInteger,RLGSpeechEngineMarkType) {
 @end
 
 @interface RLGSpeechEngine : NSObject
-@property (nonatomic,assign) RLGSpeechEngineMarkType markType;
+
 + (instancetype)shareInstance;
 /** 开始评测 */
-- (void)startEngineAtRefText:(NSString *) refText
-                    complete:(void (^) (NSError *error)) complete;
+- (void)startEngineAtRefText:(NSString *)refText
+                    markType:(RLGSpeechEngineMarkType) markType
+                    complete:(void (^)(NSError *))complete;
 /** 初始化引擎 */
 - (void)initEngine;
 /** 停止引擎 */
 - (void)stopEngine;
 /** 删除引擎 */
 - (void)deleteEngine;
-/** 销毁引擎 */
-- (void)invalidateEngine;
+/** 取消评测（无回调） */
+- (void)cancelEngine;
 /** 录音时间 */
 - (void)recordTime:(void (^) (NSInteger recordTime)) timeBlock;
 /** 录音回放 */
-- (void)playback:(void (^) (BOOL success)) playackBlock;
+- (void)playback;
 - (BOOL)isInitConfig;
 /** 初始化结果 */
 - (void)initResult:(void (^) (BOOL success)) resultBlock;

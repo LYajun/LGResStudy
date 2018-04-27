@@ -9,7 +9,6 @@
 #import "TestEngineViewController.h"
 #import "RLGSpeechEngine.h"
 #import "RLGCommon.h"
-#import <LGAlertUtil/LGAlertUtil.h>
 @interface TestEngineViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *stateLab;
 @property (weak, nonatomic) IBOutlet UITextField *refTextField;
@@ -17,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *playbackBtn;
 @property (weak, nonatomic) IBOutlet UILabel *playStateLab;
 @property (weak, nonatomic) IBOutlet UITextView *resultTextView;
-
+@property (nonatomic,assign) RLGSpeechEngineMarkType markType;
 @end
 
 @implementation TestEngineViewController
@@ -31,7 +30,6 @@
     self.stateLab.text = [[RLGSpeechEngine shareInstance] isInitConfig] ? @"已配置好": @"配置中...";
     [[RLGSpeechEngine shareInstance] initResult:^(BOOL success) {
         if (success) {
-            [LGAlert hide];
             weakSelf.stateLab.text = @"已配置好";
         }else{
             weakSelf.stateLab.text = @"配置中...";
@@ -47,22 +45,18 @@
         weakSelf.recordBtn.selected = NO;
         weakSelf.playStateLab.text = @"完成";
         if (resultModel.isError) {
-            [LGAlert alertWarningWithMessage:@"语音预测服务异常，点击重启服务" cancelBlock:nil confirmBlock:^{
-                [LGAlert showIndeterminateWithStatus:@"重启中..."];
-                [[RLGSpeechEngine shareInstance] initEngine];
-            }];
             weakSelf.resultTextView.text = resultModel.errorMsg;
         }else{
             weakSelf.resultTextView.text = [NSString stringWithFormat:@"得分: %@分",resultModel.totalScore];
         }
     }];
-    [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeWord;
+    self.markType = RLGSpeechEngineMarkTypeWord;
 }
 - (IBAction)segment:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeWord;
+        self.markType = RLGSpeechEngineMarkTypeWord;
     }else{
-        [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
+        self.markType = RLGSpeechEngineMarkTypeSen;
     }
 }
 
@@ -78,7 +72,7 @@
         self.resultTextView.text = @"";;
         self.playStateLab.text = @"准备录音";
         __weak typeof(self) weakSelf = self;
-        [[RLGSpeechEngine shareInstance] startEngineAtRefText:self.refTextField.text complete:^(NSError *error) {
+        [[RLGSpeechEngine shareInstance] startEngineAtRefText:self.refTextField.text markType:self.markType complete:^(NSError *error) {
             if (error) {
                 weakSelf.recordBtn.selected = NO;
                 weakSelf.playStateLab.text = error.localizedDescription;
@@ -89,10 +83,6 @@
 }
 
 - (void)playbackPressed:(UIButton *) btn{
-    [[RLGSpeechEngine shareInstance] playback:^(BOOL success) {
-        if (!success) {
-            NSLog(@"回放失败");
-        }
-    }];
+    [[RLGSpeechEngine shareInstance] playback];
 }
 @end

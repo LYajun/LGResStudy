@@ -12,6 +12,7 @@
 #import <Masonry/Masonry.h>
 #import "RLGSpeechEngine.h"
 #import <LGAlertUtil/LGAlertUtil.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface RLGSpeechTipView ()
 @property (nonatomic,strong) UIImageView *bgImageV;
@@ -47,6 +48,7 @@
 }
 - (void)startSpeechEngine{
     __weak typeof(self) weakSelf = self;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[RLGSpeechEngine shareInstance] speechEngineResult:^(RLGSpeechResultModel *resultModel) {
         [weakSelf stopTimeer];
         if (resultModel.isError) {
@@ -64,13 +66,14 @@
 }
 - (void)startRecordWithReftext:(NSString *) refText{
     [self.timer fire];
-    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText complete:^(NSError *error) {
+    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText markType:RLGSpeechEngineMarkTypeSen complete:^(NSError *error) {
         if (error) {
             NSLog(@"开始评测错误:%@",error.localizedDescription);
         }
     }];
 }
 - (void)finishAction{
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
     __weak typeof(self) weakSelf = self;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         if (weakSelf.speechFinishBlock) {

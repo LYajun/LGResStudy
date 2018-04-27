@@ -15,6 +15,7 @@
 #import "RLGTextPresenter.h"
 #import "RLGTextWordView.h"
 #import "RLGSpeechEngine.h"
+#import <LGAlertUtil/LGAlertUtil.h>
 
 @interface RLGVoiceViewController ()
 @property (nonatomic,strong) RLGResModel *resModel;
@@ -34,7 +35,6 @@
 }
 - (void)initUI{
     self.view.backgroundColor = [UIColor whiteColor];
-    [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
 }
 - (void)layoutUI{
     [self.view addSubview:self.operateView];
@@ -63,6 +63,12 @@
         self.operateView.isNeedRecord = NO;
     }else{
         RLG_MicrophoneAuthorization();
+        if (![[RLGSpeechEngine shareInstance] isInitConfig]) {
+            [LGAlert showIndeterminateWithStatus:@"语音服务启动中..."];
+            [[RLGSpeechEngine shareInstance] initResult:^(BOOL success) {
+                [LGAlert showSuccessWithStatus:@"语音评测服务已启动"];
+            }];
+        }
         self.operateView.isNeedRecord = YES;
     }
     [self.operateView resetSetup];

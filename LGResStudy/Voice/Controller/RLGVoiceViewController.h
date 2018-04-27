@@ -6,8 +6,8 @@
 //  Copyright © 2018年 刘亚军. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RLGBaseViewController.h"
 #import "RLGViewTransferProtocol.h"
-@interface RLGVoiceViewController : UIViewController<RLGViewTransferProtocol>
+@interface RLGVoiceViewController : RLGBaseViewController<RLGViewTransferProtocol>
 
 @end

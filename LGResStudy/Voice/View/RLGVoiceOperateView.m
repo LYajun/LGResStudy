@@ -108,6 +108,7 @@
 }
 - (void)resetSetup{
     [self.player stop];
+    self.playTimeL.text = [NSString stringWithFormat:@"00:00/%@",RLG_Time(self.duration)];
     self.recordBtn.selected = NO;
     self.currentIndex = 0;
     self.progressSlider.value = 0;

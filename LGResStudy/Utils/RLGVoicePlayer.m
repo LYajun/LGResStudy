@@ -33,7 +33,7 @@
 }
 - (void)stop{
     [self pause];
-    [self.player seekToTime:CMTimeMake(0, self.player.currentTime.timescale)];
+    [self seekToTime:0 isPlay:NO];
     [self removeTimeObserver];
     [self removeObserverFromPlayerItem:self.player.currentItem];
     [self removeNotification];
