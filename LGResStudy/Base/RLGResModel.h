@@ -25,12 +25,23 @@ typedef NS_ENUM(NSInteger,RLGResType){
 @property (nonatomic,copy) NSString *Ehtml;
 @property (nonatomic,copy) NSString *Chtml;
 @property (nonatomic,copy) NSString *Etext;
+/** 新增: Etext富文本*/
 @property (nonatomic,strong) NSMutableAttributedString *Etext_attr;
 @property (nonatomic,copy) NSString *Ctext;
+/** 新增: 该句录音文件名（多个文件名用","隔开） */
+@property (nonatomic,copy) NSString *recordNames;
+/** 新增: 录音最高得分 */
+@property (nonatomic,copy) NSString *maxScore;
+/** 新增: 录音评分模型数组 */
+@property (nonatomic,strong) NSArray *markModels;
+/** 新增: 录音信息模型数组 */
+@property (nonatomic,strong) NSArray *recordModels;
+- (NSArray *)recordNameList;
 @end
 
 @interface RLGResContentModel : NSObject
 @property (nonatomic,copy) NSString *ResContent;
+/** 新增: ResContent富文本*/
 @property (nonatomic,strong) NSMutableAttributedString *ResContent_attr;
 @property (nonatomic,copy) NSString *ResTranContent;
 @property (nonatomic,copy) NSString *ResMediaPath;

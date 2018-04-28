@@ -73,6 +73,7 @@
             if ([wVoiceVC respondsToSelector:@selector(updateData:)]) {
                 [wVoiceVC updateData:resModel];
             }
+            wVoiceVC.ownController = self.view;
         }
             break;
         case video:

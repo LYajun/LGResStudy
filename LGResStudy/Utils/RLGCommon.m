@@ -150,4 +150,27 @@ void RLG_MicrophoneAuthorization(void){
 BOOL RLG_GetMicrophoneAuthorization(void){
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"micAuthorization"];
 }
-
+NSString *RLG_SpeechRecordNamePath(void){
+    NSString *recordPath = [NSString stringWithFormat:@"%@/Documents/speechRecord/%@/%@",NSHomeDirectory(),LGResConfig().UserID,LGResConfig().GUID];
+    NSString *recordPathFilePath = [recordPath stringByAppendingString:@"recordName.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:recordPath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:recordPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    if (![[NSFileManager defaultManager] fileExistsAtPath:recordPathFilePath]) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic writeToFile:recordPathFilePath atomically:YES];
+    }
+    return recordPathFilePath;
+}
+NSString *RLG_SpeechRecordInfoPath(void){
+    NSString *recordPath = [NSString stringWithFormat:@"%@/Documents/speechRecordInfo/%@/%@",NSHomeDirectory(),LGResConfig().UserID,LGResConfig().GUID];
+    NSString *recordPathFilePath = [recordPath stringByAppendingString:@"recordInfo.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:recordPath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:recordPath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    if (![[NSFileManager defaultManager] fileExistsAtPath:recordPathFilePath]) {
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic writeToFile:recordPathFilePath atomically:YES];
+    }
+    return recordPathFilePath;
+}

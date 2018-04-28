@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @interface RLGSpeechTipView : UIView
-@property (nonatomic,copy) void (^speechFinishBlock) (void);
+@property (nonatomic,copy) void (^speechFinishBlock) (NSString *recordID);
 - (instancetype)initWithFrame:(CGRect)frame refText:(NSString *) refText recordTime:(NSInteger) recordTime;
 @end

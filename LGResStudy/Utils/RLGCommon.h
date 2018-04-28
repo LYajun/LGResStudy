@@ -31,3 +31,5 @@ static NSString *RLGStopPlayerNotification = @"RLGStopPlayerNotification";
 void RLG_StopPlayer(void);
 void RLG_MicrophoneAuthorization(void);
 BOOL RLG_GetMicrophoneAuthorization(void);
+NSString *RLG_SpeechRecordNamePath(void);
+NSString *RLG_SpeechRecordInfoPath(void);

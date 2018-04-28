@@ -22,4 +22,5 @@
 /** 声文资料 */
 - (void)playToIndex:(NSInteger) index;
 - (void)speechDidFinish;
+- (void)speechRecordDidDelete;
 @end

@@ -16,6 +16,7 @@
 #import "RLGTextWordView.h"
 #import "RLGSpeechEngine.h"
 #import <LGAlertUtil/LGAlertUtil.h>
+#import "RLGVoiceRecordViewController.h"
 
 @interface RLGVoiceViewController ()
 @property (nonatomic,strong) RLGResModel *resModel;
@@ -35,6 +36,7 @@
 }
 - (void)initUI{
     self.view.backgroundColor = [UIColor whiteColor];
+
 }
 - (void)layoutUI{
     [self.view addSubview:self.operateView];
@@ -67,7 +69,10 @@
             [LGAlert showIndeterminateWithStatus:@"语音服务启动中..."];
             [[RLGSpeechEngine shareInstance] initResult:^(BOOL success) {
                 [LGAlert showSuccessWithStatus:@"语音评测服务已启动"];
+                [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
             }];
+        }else{
+            [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
         }
         self.operateView.isNeedRecord = YES;
     }
@@ -108,6 +113,13 @@
         };
         _operateView.PlayRecordIndexBlock = ^(NSInteger index) {
             [weakSelf.tableView showSpeechMarkAtIndex:index];
+        };
+        _operateView.MicroClickBlock = ^{
+            RLGVoiceRecordViewController *recordVC = [[RLGVoiceRecordViewController alloc] initWithResModel:weakSelf.resModel];
+            recordVC.DeleteRecordBlock = ^{
+                [weakSelf.operateView updateInfo];
+            };
+            [weakSelf.ownController.navigationController pushViewController:recordVC animated:YES];
         };
     }
     return _operateView;

@@ -9,5 +9,5 @@
 #import "RLGBaseViewController.h"
 #import "RLGViewTransferProtocol.h"
 @interface RLGVoiceViewController : RLGBaseViewController<RLGViewTransferProtocol>
-
+@property (nonatomic,weak) UIViewController *ownController;
 @end

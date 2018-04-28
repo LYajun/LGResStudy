@@ -10,10 +10,6 @@
 #import "LGResStudy.h"
 #import <LGAlertUtil/LGAlertUtil.h>
 #import "TestEngineViewController.h"
-
-
-
-
 @interface ViewController ()
 {
     NSString *wHttpIp;
@@ -25,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
     [LGAlert config];
     wHttpIp = @"http://192.168.129.44:8050";
 }

@@ -27,13 +27,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入评测内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nu8-td-neE">
-                    <rect key="frame" x="10" y="128" width="355" height="30"/>
+                    <rect key="frame" x="10" y="84" width="355" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9K-7G-0iD">
-                    <rect key="frame" x="10" y="168" width="80" height="30"/>
+                    <rect key="frame" x="10" y="124" width="80" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="euL-BF-orc"/>
                         <constraint firstAttribute="height" constant="30" id="gCR-lb-4gT"/>
@@ -44,26 +44,26 @@
                     <state key="selected" title="停止录音"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开始录音" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1j-Xf-U1w">
-                    <rect key="frame" x="100" y="172.5" width="265" height="21"/>
+                    <rect key="frame" x="100" y="128.5" width="265" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.2431874275" green="0.64902830119999999" blue="0.92308765650000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-il-qeq">
-                    <rect key="frame" x="10" y="264" width="354" height="348"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-il-qeq">
+                    <rect key="frame" x="10" y="220" width="354" height="392"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltT-op-SJ6">
-                    <rect key="frame" x="10" y="84" width="355" height="24"/>
+                    <rect key="frame" x="10" y="40" width="355" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mIs-QT-gaj">
-                    <rect key="frame" x="10" y="213.5" width="354" height="30"/>
+                    <rect key="frame" x="10" y="169.5" width="354" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="dcn-nx-MYp"/>
                     </constraints>
@@ -97,7 +97,7 @@
                 <constraint firstItem="W9K-7G-0iD" firstAttribute="top" secondItem="nu8-td-neE" secondAttribute="bottom" constant="10" id="Kip-Vs-UKr"/>
                 <constraint firstItem="c1j-Xf-U1w" firstAttribute="centerY" secondItem="W9K-7G-0iD" secondAttribute="centerY" id="PlZ-Ri-oj6"/>
                 <constraint firstItem="mIs-QT-gaj" firstAttribute="leading" secondItem="NGa-mH-Whk" secondAttribute="leading" constant="10" id="SoM-ep-w8L"/>
-                <constraint firstItem="ltT-op-SJ6" firstAttribute="top" secondItem="NGa-mH-Whk" secondAttribute="top" constant="64" id="aCX-Fl-Tde"/>
+                <constraint firstItem="ltT-op-SJ6" firstAttribute="top" secondItem="NGa-mH-Whk" secondAttribute="top" constant="20" id="aCX-Fl-Tde"/>
                 <constraint firstItem="HGL-gU-XA5" firstAttribute="top" secondItem="Mde-il-qeq" secondAttribute="bottom" constant="5" id="bRb-SG-Ixm"/>
                 <constraint firstItem="W9K-7G-0iD" firstAttribute="leading" secondItem="nu8-td-neE" secondAttribute="leading" id="eXI-ag-iux"/>
                 <constraint firstItem="HGL-gU-XA5" firstAttribute="centerX" secondItem="ySw-9k-an1" secondAttribute="centerX" id="hYZ-fh-zDS"/>

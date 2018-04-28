@@ -73,11 +73,24 @@
     [self addSubview:tipView];
     self.userInteractionEnabled = NO;
     __weak typeof(self) weakSelf = self;
-    tipView.speechFinishBlock = ^{
+    tipView.speechFinishBlock = ^(NSString *recordID) {
+        
+        if (!RLG_IsEmpty(recordID)) {
+            RLGResContentModel *contentModel = self.resModel.Reslist.firstObject;
+            RLGResVideoModel *videoModel = contentModel.VideoTrainSynInfo[indexPath.row];
+            if (videoModel.recordNames.length != 0) {
+                videoModel.recordNames = [videoModel.recordNames stringByAppendingString:@","];
+            }
+            videoModel.recordNames = [videoModel.recordNames stringByAppendingString:recordID];
+            
+            NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
+            [plist setObject:videoModel.recordNames forKey:videoModel.SenID];
+            [plist writeToFile:RLG_SpeechRecordNamePath() atomically:false];
+        }
         if ([weakSelf.ownController respondsToSelector:@selector(speechDidFinish)]) {
             [weakSelf.ownController speechDidFinish];
         }
-         [weakSelf hideSpeechTipView];
+        [weakSelf hideSpeechTipView];
     };
     self.speechTipView = tipView;
 }

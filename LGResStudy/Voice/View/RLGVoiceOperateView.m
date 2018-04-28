@@ -97,13 +97,29 @@
     _isNeedRecord = isNeedRecord;
     self.microBtn.hidden = !isNeedRecord;
 }
+- (void)setResModel:(RLGResModel *)resModel{
+    _resModel = resModel;
+    [self updateInfo];
+}
 - (void)updateInfo{
-    NSArray *records = [[RLGSpeechEngine shareInstance] recordFiles];
+    NSArray *records = [[RLGSpeechEngine shareInstance] recordNames];
     if (RLG_IsEmpty(records)) {
         self.microBtn.tipEnable = NO;
     }else{
-        self.microBtn.tipEnable = YES;
-        self.microBtn.tipCount = records.count;
+        NSInteger count = 0;
+        RLGResContentModel *contentModel = self.resModel.Reslist.firstObject;
+        for (RLGResVideoModel *model in contentModel.VideoTrainSynInfo) {
+            if (!RLG_IsEmpty(model.recordNameList)) {
+                for (NSString *recordName in model.recordNameList) {
+                    if ([records containsObject:recordName]) {
+                        count++;
+                    }
+                }
+            }
+        }
+        if (count > 0) {
+            self.microBtn.tipCount = count;
+        }
     }
 }
 - (void)resetSetup{
@@ -190,6 +206,7 @@
     [self.player stop];
 }
 - (void)play{
+    self.recordBtn.selected = YES;
     [self updateInfo];
      [self.player play];
     if (self.PlayIndexBlock) {
@@ -211,7 +228,11 @@
     [self setCurrentPlayIndex:self.currentIndex + 1];
 }
 - (void)microClickAction:(UIButton *) btn{
-    
+    self.recordBtn.selected = YES;
+    [self playClickAction:self.recordBtn];
+    if (self.MicroClickBlock) {
+        self.MicroClickBlock();
+    }
 }
 #pragma mark getter
 - (RLGVoicePlayer *)player{
@@ -224,7 +245,7 @@
         };
         _player.TotalBufferBlock = ^(CGFloat totalBuffer) {
              weakSelf.progressBufView.progress = totalBuffer /  weakSelf.duration;
-            if (totalBuffer >= weakSelf.duration) {
+            if (totalBuffer >= weakSelf.duration*0.9) {
                 [LGAlert hide];
             }
         };
@@ -241,7 +262,7 @@
         };
         _player.PlayFailBlock = ^{
             weakSelf.recordBtn.selected = NO;
-            [LGAlert showRedStatus:@"播放失败"];
+            [LGAlert showRedStatus:@"音频文件加载失败"];
         };
         _player.SeekFinishBlock = ^{
             weakSelf.recordBtn.selected = YES;

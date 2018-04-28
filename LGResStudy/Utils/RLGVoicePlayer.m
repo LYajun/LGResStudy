@@ -33,7 +33,9 @@
 }
 - (void)stop{
     [self pause];
-    [self seekToTime:0 isPlay:NO];
+    if (self.player.currentItem.status != AVPlayerItemStatusReadyToPlay) {
+        [self seekToTime:0 isPlay:NO];
+    }
     [self removeTimeObserver];
     [self removeObserverFromPlayerItem:self.player.currentItem];
     [self removeNotification];
@@ -126,21 +128,26 @@
     [playerItem.asset cancelLoading];
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    __weak typeof(self) weakSelf = self;
     AVPlayerItem *playerItem = (AVPlayerItem *)object;
     if([keyPath isEqualToString:@"status"]){
         AVPlayerStatus status = [[change objectForKey:NSKeyValueChangeNewKey] integerValue];
         if (status == AVPlayerItemStatusReadyToPlay) {
             //只有在播放状态才能获取视频时间长度
             NSTimeInterval duration = CMTimeGetSeconds(playerItem.asset.duration);
-            if (self.TotalDurationBlock) {
-                self.TotalDurationBlock(duration);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (weakSelf.TotalDurationBlock) {
+                    weakSelf.TotalDurationBlock(duration);
+                }
+            });
         }else{// 失败
             wIsPlaying = NO;
             [self stop];
-            if (self.PlayFailBlock) {
-                self.PlayFailBlock();
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (weakSelf.PlayFailBlock) {
+                    weakSelf.PlayFailBlock();
+                }
+            });
         }
     }else if([keyPath isEqualToString:@"loadedTimeRanges"]){
         NSArray *array=playerItem.loadedTimeRanges;
@@ -148,9 +155,11 @@
         float startSeconds = CMTimeGetSeconds(timeRange.start);
         float durationSeconds = CMTimeGetSeconds(timeRange.duration);
         NSTimeInterval totalBuffer = startSeconds + durationSeconds;//缓冲总长度
-        if (self.TotalBufferBlock) {
-            self.TotalBufferBlock(totalBuffer);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (weakSelf.TotalBufferBlock) {
+                weakSelf.TotalBufferBlock(totalBuffer);
+            }
+        });
     }else if ([keyPath isEqualToString:@"playbackBufferEmpty"]){
         if (playerItem.playbackBufferEmpty) {
             NSLog(@"bufEmpty--YES");
@@ -163,9 +172,11 @@
         }else{
             NSLog(@"keepUp---NO");
         }
-        if (self.PlaybackLikelyToKeepUpBlock) {
-            self.PlaybackLikelyToKeepUpBlock(playerItem.playbackLikelyToKeepUp);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (weakSelf.PlaybackLikelyToKeepUpBlock) {
+                weakSelf.PlaybackLikelyToKeepUpBlock(playerItem.playbackLikelyToKeepUp);
+            }
+        });
     }
 }
 

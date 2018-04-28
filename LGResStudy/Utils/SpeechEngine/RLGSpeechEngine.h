@@ -62,27 +62,27 @@ typedef NS_ENUM(NSInteger,RLGSpeechEngineMarkType) {
 @property (nonatomic,assign) BOOL isError;
 /** 错误信息 */
 @property (nonatomic,copy) NSString *errorMsg;
++ (instancetype)speechResultWithDictionary:(NSDictionary *)aDictionary;
+- (NSDictionary *)rlg_JSONObject;
 @end
 
 @interface RLGSpeechEngine : NSObject
-
+@property (nonatomic,assign) RLGSpeechEngineMarkType markType;
 + (instancetype)shareInstance;
 /** 开始评测 */
-- (void)startEngineAtRefText:(NSString *)refText
-                    markType:(RLGSpeechEngineMarkType) markType
-                    complete:(void (^)(NSError *))complete;
+- (void)startEngineAtRefText:(NSString *)refText;
 /** 初始化引擎 */
 - (void)initEngine;
 /** 停止引擎 */
 - (void)stopEngine;
 /** 删除引擎 */
 - (void)deleteEngine;
-/** 取消评测（无回调） */
-- (void)cancelEngine;
+/** 销毁引擎 */
+- (void)invalidateEngine;
 /** 录音时间 */
 - (void)recordTime:(void (^) (NSInteger recordTime)) timeBlock;
 /** 录音回放 */
-- (void)playback;
+- (void)playback:(void (^) (BOOL success)) playackBlock;
 - (BOOL)isInitConfig;
 /** 初始化结果 */
 - (void)initResult:(void (^) (BOOL success)) resultBlock;
@@ -92,11 +92,14 @@ typedef NS_ENUM(NSInteger,RLGSpeechEngineMarkType) {
 - (void)speechEngineResult:(void (^) (RLGSpeechResultModel *resultModel)) resultBlock;
 /** 根据录音文件路径删除录音文件 */
 - (void)removeRecordFileAtPath:(NSString *) path complete:(void (^) (BOOL success)) complete;
-
+/** 解析录音文件信息 */
+-(RLGSpeechModel *)parseVoiceFileAtPath:(NSString *) filePath;
 /** 全部录音文件路径 */
 - (NSArray *)recordFiles;
 /** 全部录音文件名 */
 - (NSArray *)recordNames;
+/** 录音文件夹路径 */
+- (NSString *)recordDirectory;
 /** 全部录音频文件属性*/
 - (NSArray<RLGSpeechModel *> *)recordURLAssets;
 @end

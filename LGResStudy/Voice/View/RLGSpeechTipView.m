@@ -30,7 +30,9 @@
             [self startRecordWithReftext:refText];
         }else{
             self.stateLab.text = @"语音打分服务未开启";
-            [self finishAction];
+            if (self.speechFinishBlock) {
+                self.speechFinishBlock(@"");
+            }
         }
     }
     return self;
@@ -48,7 +50,6 @@
 }
 - (void)startSpeechEngine{
     __weak typeof(self) weakSelf = self;
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
     [[RLGSpeechEngine shareInstance] speechEngineResult:^(RLGSpeechResultModel *resultModel) {
         [weakSelf stopTimeer];
         if (resultModel.isError) {
@@ -56,8 +57,15 @@
             NSLog(@"结束评测错误:%@",resultModel.errorMsg);
         }else{
             weakSelf.stateLab.text = [NSString stringWithFormat:@"得分: %@分",resultModel.totalScore];
+            NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordInfoPath()];
+            [plist setObject:[resultModel rlg_JSONObject] forKey:resultModel.speechID];
+            [plist writeToFile:RLG_SpeechRecordInfoPath() atomically:false];
         }
-        [weakSelf finishAction];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            if (weakSelf.speechFinishBlock) {
+                weakSelf.speechFinishBlock(resultModel.speechID);
+            }
+        });
     }];
 }
 - (void)stopTimeer{
@@ -66,21 +74,7 @@
 }
 - (void)startRecordWithReftext:(NSString *) refText{
     [self.timer fire];
-    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText markType:RLGSpeechEngineMarkTypeSen complete:^(NSError *error) {
-        if (error) {
-            NSLog(@"开始评测错误:%@",error.localizedDescription);
-        }
-    }];
-}
-- (void)finishAction{
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
-    __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        if (weakSelf.speechFinishBlock) {
-            weakSelf.speechFinishBlock();
-        }
-    });
-    
+    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText];
 }
 - (RLGWeakTimer *)timer{
     if (!_timer) {

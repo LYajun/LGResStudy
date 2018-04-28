@@ -17,7 +17,6 @@
 @property (strong, nonatomic) UIView *viewNoData;
 /** 发生错误 */
 @property (strong, nonatomic) UIView *viewLoadError;
-@property (nonatomic,assign) BOOL naviBarTranslucent;
 @end
 
 @implementation RLGBaseViewController
@@ -26,22 +25,20 @@
     [super viewDidLoad];
     [self initNaviBar];
 }
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    if (self.naviBarTranslucent) {
-        self.navigationController.navigationBar.translucent = YES;
-    }
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.translucent = NO;
+}
+- (void)dealloc{
+    RLG_Log([NSString stringWithFormat:@"%@ dealloc",NSStringFromClass(self.class)]);
 }
 - (void)initNaviBar{
+    self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:self.navigationItem.backBarButtonItem.style target:nil action:nil];
     self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageWithContentsOfFile:RLG_GETBundleResource(@"lg_back")] style:UIBarButtonItemStylePlain target:self action:@selector(navBar_leftItemPressed)];
-    self.naviBarTranslucent = self.navigationController.navigationBar.translucent;
-    if (self.naviBarTranslucent) {
-        self.navigationController.navigationBar.translucent = NO;
-    }
 }
 - (void)navBar_leftItemPressed{
     RLG_StopPlayer();

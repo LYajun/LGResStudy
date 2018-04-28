@@ -14,6 +14,29 @@
     _Etext = Etext;
     _Etext_attr = RLG_AttributedString(Etext, 16);
 }
+- (void)setSenID:(NSString *)SenID{
+    _SenID = SenID;
+     NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
+    _recordNames = [plist objectForKey:SenID];
+}
+- (NSString *)maxScore{
+    if (!_maxScore) {
+        _maxScore = @"0";
+    }
+    return _maxScore;
+}
+- (NSString *)recordNames{
+    if (!_recordNames) {
+        _recordNames = @"";
+    }
+    return _recordNames;
+}
+- (NSArray *)recordNameList{
+    if (self.recordNames.length > 0) {
+        return [self.recordNames componentsSeparatedByString:@","];
+    }
+    return nil;
+}
 @end
 @implementation RLGResContentModel
 + (NSDictionary *)mj_objectClassInArray{

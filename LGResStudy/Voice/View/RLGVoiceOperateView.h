@@ -12,6 +12,7 @@
 @property (nonatomic,strong) RLGResModel *resModel;
 @property (nonatomic,assign) BOOL isNeedRecord;
 @property (nonatomic,copy) void (^PlayIndexBlock) (NSInteger index);
+@property (nonatomic,copy) void (^MicroClickBlock) (void);
 @property (nonatomic,copy) void (^PlayRecordIndexBlock) (NSInteger index);
 - (void)setCurrentPlayIndex:(NSInteger) index;
 - (instancetype)initWithFrame:(CGRect)frame voiceUrl:(NSString *) voiceUrl;
