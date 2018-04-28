@@ -12,6 +12,10 @@ DerivedData/
 *.xcworkspace/xcuserdata/
 *.xcworkspace/xcshareddata/
 
+## SG
+#忽略SGPlayer.framework文件夹中所有文件
+SGPlayer.framework/
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
