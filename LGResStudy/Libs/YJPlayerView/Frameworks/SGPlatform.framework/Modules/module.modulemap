@@ -1,0 +1,6 @@
+framework module SGPlatform {
+  umbrella header "SGPlatform.h"
+
+  export *
+  module * { export * }
+}

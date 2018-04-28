@@ -33,6 +33,25 @@
 		BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79D92086F60A00C451DA /* RLGTextPresenter.m */; };
 		BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DC2087138D00C451DA /* RLGTextWordView.m */; };
 		BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */; };
+		BA4A263020946A5600B27D0F /* YJBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A261920946A5600B27D0F /* YJBrightnessView.m */; };
+		BA4A263120946A5600B27D0F /* YJPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A261C20946A5600B27D0F /* YJPlayerView.m */; };
+		BA4A263220946A5600B27D0F /* YJHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A261F20946A5600B27D0F /* YJHeaderView.m */; };
+		BA4A263320946A5600B27D0F /* UITabBarController+YJPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262020946A5600B27D0F /* UITabBarController+YJPlayerRotation.m */; };
+		BA4A263420946A5600B27D0F /* YJBasePlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262220946A5600B27D0F /* YJBasePlayerView.m */; };
+		BA4A263520946A5600B27D0F /* UIViewController+YJPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262320946A5600B27D0F /* UIViewController+YJPlayerRotation.m */; };
+		BA4A263620946A5600B27D0F /* YJPlayStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262420946A5600B27D0F /* YJPlayStatus.m */; };
+		BA4A263720946A5600B27D0F /* YJPlayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262620946A5600B27D0F /* YJPlayModel.m */; };
+		BA4A263820946A5600B27D0F /* UINavigationController+YJPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262720946A5600B27D0F /* UINavigationController+YJPlayerRotation.m */; };
+		BA4A263920946A5600B27D0F /* YJFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A262820946A5600B27D0F /* YJFooterView.m */; };
+		BA4A263A20946A5600B27D0F /* YJPlayerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA4A262C20946A5600B27D0F /* YJPlayerView.bundle */; };
+		BA4A263B20946A5600B27D0F /* SGPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A262E20946A5600B27D0F /* SGPlatform.framework */; };
+		BA4A263C20946A5600B27D0F /* SGPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A262F20946A5600B27D0F /* SGPlayer.framework */; };
+		BA4A263E20946A6C00B27D0F /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A263D20946A6C00B27D0F /* CoreMedia.framework */; };
+		BA4A263F20946A7900B27D0F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC35A52208E02520040B251 /* AudioToolbox.framework */; };
+		BA4A264120946A8600B27D0F /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264020946A8600B27D0F /* VideoToolbox.framework */; };
+		BA4A264320946A9100B27D0F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264220946A9100B27D0F /* libiconv.tbd */; };
+		BA4A264520946A9B00B27D0F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264420946A9B00B27D0F /* libbz2.tbd */; };
+		BA4A264720946AA300B27D0F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264620946AA300B27D0F /* libz.tbd */; };
 		BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */; };
 		BA5044782092FB3900F9CC25 /* native.res in Resources */ = {isa = PBXBuildFile; fileRef = BA5044702092FB3900F9CC25 /* native.res */; };
 		BA5044792092FB3900F9CC25 /* skeng-ios in Resources */ = {isa = PBXBuildFile; fileRef = BA5044712092FB3900F9CC25 /* skeng-ios */; };
@@ -124,6 +143,34 @@
 		BA3B79DC2087138D00C451DA /* RLGTextWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGTextWordView.m; sourceTree = "<group>"; };
 		BA3B79DE208715ED00C451DA /* RLGVoicePlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoicePlayer.h; sourceTree = "<group>"; };
 		BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoicePlayer.m; sourceTree = "<group>"; };
+		BA4A261720946A5600B27D0F /* UIViewController+YJPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+YJPlayerRotation.h"; sourceTree = "<group>"; };
+		BA4A261820946A5600B27D0F /* YJBasePlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBasePlayerView.h; sourceTree = "<group>"; };
+		BA4A261920946A5600B27D0F /* YJBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBrightnessView.m; sourceTree = "<group>"; };
+		BA4A261A20946A5600B27D0F /* YJPlayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPlayModel.h; sourceTree = "<group>"; };
+		BA4A261B20946A5600B27D0F /* UINavigationController+YJPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+YJPlayerRotation.h"; sourceTree = "<group>"; };
+		BA4A261C20946A5600B27D0F /* YJPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPlayerView.m; sourceTree = "<group>"; };
+		BA4A261D20946A5600B27D0F /* YJPlayStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPlayStatus.h; sourceTree = "<group>"; };
+		BA4A261E20946A5600B27D0F /* YJFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJFooterView.h; sourceTree = "<group>"; };
+		BA4A261F20946A5600B27D0F /* YJHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJHeaderView.m; sourceTree = "<group>"; };
+		BA4A262020946A5600B27D0F /* UITabBarController+YJPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+YJPlayerRotation.m"; sourceTree = "<group>"; };
+		BA4A262120946A5600B27D0F /* YJBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJBrightnessView.h; sourceTree = "<group>"; };
+		BA4A262220946A5600B27D0F /* YJBasePlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJBasePlayerView.m; sourceTree = "<group>"; };
+		BA4A262320946A5600B27D0F /* UIViewController+YJPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+YJPlayerRotation.m"; sourceTree = "<group>"; };
+		BA4A262420946A5600B27D0F /* YJPlayStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPlayStatus.m; sourceTree = "<group>"; };
+		BA4A262520946A5600B27D0F /* YJPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJPlayerView.h; sourceTree = "<group>"; };
+		BA4A262620946A5600B27D0F /* YJPlayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJPlayModel.m; sourceTree = "<group>"; };
+		BA4A262720946A5600B27D0F /* UINavigationController+YJPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+YJPlayerRotation.m"; sourceTree = "<group>"; };
+		BA4A262820946A5600B27D0F /* YJFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJFooterView.m; sourceTree = "<group>"; };
+		BA4A262920946A5600B27D0F /* UITabBarController+YJPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+YJPlayerRotation.h"; sourceTree = "<group>"; };
+		BA4A262A20946A5600B27D0F /* YJHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJHeaderView.h; sourceTree = "<group>"; };
+		BA4A262C20946A5600B27D0F /* YJPlayerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YJPlayerView.bundle; sourceTree = "<group>"; };
+		BA4A262E20946A5600B27D0F /* SGPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGPlatform.framework; sourceTree = "<group>"; };
+		BA4A262F20946A5600B27D0F /* SGPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGPlayer.framework; sourceTree = "<group>"; };
+		BA4A263D20946A6C00B27D0F /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BA4A264020946A8600B27D0F /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		BA4A264220946A9100B27D0F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		BA4A264420946A9B00B27D0F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		BA4A264620946AA300B27D0F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RLGSpeechEngine.mm; sourceTree = "<group>"; };
 		BA50446B2092FB1F00F9CC25 /* RLGSpeechEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGSpeechEngine.h; sourceTree = "<group>"; };
 		BA50446E2092FB3900F9CC25 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
@@ -199,11 +246,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4A264720946AA300B27D0F /* libz.tbd in Frameworks */,
+				BA4A264520946A9B00B27D0F /* libbz2.tbd in Frameworks */,
+				BA4A264320946A9100B27D0F /* libiconv.tbd in Frameworks */,
+				BA4A264120946A8600B27D0F /* VideoToolbox.framework in Frameworks */,
+				BA4A263F20946A7900B27D0F /* AudioToolbox.framework in Frameworks */,
+				BA4A263E20946A6C00B27D0F /* CoreMedia.framework in Frameworks */,
 				BAC35A84208F191E0040B251 /* Accelerate.framework in Frameworks */,
 				BAC35A83208F18FD0040B251 /* SystemConfiguration.framework in Frameworks */,
 				BA50447D2092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a in Frameworks */,
 				BAC35A51208E02420040B251 /* libz.1.tbd in Frameworks */,
+				BA4A263C20946A5600B27D0F /* SGPlayer.framework in Frameworks */,
 				3DDEA7CB5850D84A094D9A8B /* Pods_LGResStudyDemo.framework in Frameworks */,
+				BA4A263B20946A5600B27D0F /* SGPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,11 +512,58 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		BA4A260C2094692E00B27D0F /* VideoLib */ = {
+		BA4A261520946A5600B27D0F /* YJPlayerView */ = {
 			isa = PBXGroup;
 			children = (
+				BA4A261620946A5600B27D0F /* Classes */,
+				BA4A262B20946A5600B27D0F /* Resources */,
+				BA4A262D20946A5600B27D0F /* Frameworks */,
 			);
-			path = VideoLib;
+			path = YJPlayerView;
+			sourceTree = "<group>";
+		};
+		BA4A261620946A5600B27D0F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A261720946A5600B27D0F /* UIViewController+YJPlayerRotation.h */,
+				BA4A261820946A5600B27D0F /* YJBasePlayerView.h */,
+				BA4A261920946A5600B27D0F /* YJBrightnessView.m */,
+				BA4A261A20946A5600B27D0F /* YJPlayModel.h */,
+				BA4A261B20946A5600B27D0F /* UINavigationController+YJPlayerRotation.h */,
+				BA4A261C20946A5600B27D0F /* YJPlayerView.m */,
+				BA4A261D20946A5600B27D0F /* YJPlayStatus.h */,
+				BA4A261E20946A5600B27D0F /* YJFooterView.h */,
+				BA4A261F20946A5600B27D0F /* YJHeaderView.m */,
+				BA4A262020946A5600B27D0F /* UITabBarController+YJPlayerRotation.m */,
+				BA4A262120946A5600B27D0F /* YJBrightnessView.h */,
+				BA4A262220946A5600B27D0F /* YJBasePlayerView.m */,
+				BA4A262320946A5600B27D0F /* UIViewController+YJPlayerRotation.m */,
+				BA4A262420946A5600B27D0F /* YJPlayStatus.m */,
+				BA4A262520946A5600B27D0F /* YJPlayerView.h */,
+				BA4A262620946A5600B27D0F /* YJPlayModel.m */,
+				BA4A262720946A5600B27D0F /* UINavigationController+YJPlayerRotation.m */,
+				BA4A262820946A5600B27D0F /* YJFooterView.m */,
+				BA4A262920946A5600B27D0F /* UITabBarController+YJPlayerRotation.h */,
+				BA4A262A20946A5600B27D0F /* YJHeaderView.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BA4A262B20946A5600B27D0F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A262C20946A5600B27D0F /* YJPlayerView.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BA4A262D20946A5600B27D0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A262E20946A5600B27D0F /* SGPlatform.framework */,
+				BA4A262F20946A5600B27D0F /* SGPlayer.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 		BA50446D2092FB3900F9CC25 /* ShengTong */ = {
@@ -532,7 +634,7 @@
 		BAC35A3A208DFF640040B251 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				BA4A260C2094692E00B27D0F /* VideoLib */,
+				BA4A261520946A5600B27D0F /* YJPlayerView */,
 				BA50446D2092FB3900F9CC25 /* ShengTong */,
 			);
 			path = Libs;
@@ -550,6 +652,11 @@
 		EFB50D0BC246D8621CB1127E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA4A264620946AA300B27D0F /* libz.tbd */,
+				BA4A264420946A9B00B27D0F /* libbz2.tbd */,
+				BA4A264220946A9100B27D0F /* libiconv.tbd */,
+				BA4A264020946A8600B27D0F /* VideoToolbox.framework */,
+				BA4A263D20946A6C00B27D0F /* CoreMedia.framework */,
 				BAC35A5A208E028D0040B251 /* Accelerate.framework */,
 				BAC35A58208E027E0040B251 /* CFNetwork.framework */,
 				BAC35A56208E02740040B251 /* SystemConfiguration.framework */,
@@ -627,6 +734,7 @@
 				BAC35A89208F54060040B251 /* TestEngineViewController.xib in Resources */,
 				BA5044792092FB3900F9CC25 /* skeng-ios in Resources */,
 				BA50447B2092FB3900F9CC25 /* skegn.provision in Resources */,
+				BA4A263A20946A5600B27D0F /* YJPlayerView.bundle in Resources */,
 				BA3B79792084767E00C451DA /* LGResStudy.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +796,7 @@
 				BA504480209311CF00F9CC25 /* RLGVoiceRecordViewController.m in Sources */,
 				BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */,
 				BA50447C2092FB3900F9CC25 /* aiplayer.c in Sources */,
+				BA4A263620946A5600B27D0F /* YJPlayStatus.m in Sources */,
 				BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */,
 				BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */,
 				BA8F1D212091A907009B6CDD /* RLGSpeechTipView.m in Sources */,
@@ -695,24 +804,31 @@
 				BA8F1D1E2090787F009B6CDD /* RLGTapTableView.m in Sources */,
 				BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */,
 				BA3B795E2084513800C451DA /* ViewController.m in Sources */,
+				BA4A263520946A5600B27D0F /* UIViewController+YJPlayerRotation.m in Sources */,
+				BA4A263120946A5600B27D0F /* YJPlayerView.m in Sources */,
 				BA8F1D0F2090568B009B6CDD /* RLGVoiceTable.m in Sources */,
 				BA3B79D02085F1A000C451DA /* RLGTextView.m in Sources */,
 				BAC35A87208F2B640040B251 /* TestEngineViewController.m in Sources */,
 				BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */,
+				BA4A263320946A5600B27D0F /* UITabBarController+YJPlayerRotation.m in Sources */,
 				BA3B79692084513900C451DA /* main.m in Sources */,
 				BA3B795B2084513700C451DA /* AppDelegate.m in Sources */,
 				BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */,
 				BA3B79AE2084C40800C451DA /* RLGHttpPresenter.m in Sources */,
 				BA504483209315D400F9CC25 /* RLGVoiceRecordOperateView.m in Sources */,
 				BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */,
+				BA4A263720946A5600B27D0F /* YJPlayModel.m in Sources */,
 				BAF463AE2088BBCC00B386BD /* RLGImportantWordView.m in Sources */,
 				BAC9F18F208CB3B200E2EB0B /* RLGWordCell.m in Sources */,
 				BAC9F189208CB04300E2EB0B /* RLGWordViewController.m in Sources */,
+				BA4A263820946A5600B27D0F /* UINavigationController+YJPlayerRotation.m in Sources */,
 				BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */,
 				BA3B79A420849F3C00C451DA /* RLGPresenter.m in Sources */,
+				BA4A263020946A5600B27D0F /* YJBrightnessView.m in Sources */,
 				BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */,
 				BA3B79A12084856700C451DA /* RLGResModel.m in Sources */,
 				BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */,
+				BA4A263220946A5600B27D0F /* YJHeaderView.m in Sources */,
 				BA8F1D0C209055BF009B6CDD /* RLGVoiceViewController.m in Sources */,
 				BA3B79CB2085BFCF00C451DA /* RLGTextViewController.m in Sources */,
 				BAC9F18C208CB11C00E2EB0B /* RLGWordHeaderView.m in Sources */,
@@ -731,6 +847,8 @@
 				BAF463B12089DB1100B386BD /* RLGTouchView.m in Sources */,
 				BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */,
 				BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */,
+				BA4A263920946A5600B27D0F /* YJFooterView.m in Sources */,
+				BA4A263420946A5600B27D0F /* YJBasePlayerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +994,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LGResStudy/Libs/VideoLib",
+					"$(PROJECT_DIR)/LGResStudy/Libs/YJPlayerView/Frameworks",
 				);
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -905,6 +1024,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LGResStudy/Libs/VideoLib",
+					"$(PROJECT_DIR)/LGResStudy/Libs/YJPlayerView/Frameworks",
 				);
 				INFOPLIST_FILE = LGResStudyDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
