@@ -10,7 +10,7 @@
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/text4.PNG" width ="160" height ="288" >
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/text5.PNG" width ="160" height ="288" >
  </div>
- >	声文
+>	声文
 
 <div align="left">
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/voice1.PNG" width ="160" height ="288" >
@@ -18,7 +18,7 @@
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/voice3.PNG" width ="160" height ="288" >
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/voice4.PNG" width ="160" height ="288" >
  </div>
- >	视文
+>	视文
 
 <div align="left">
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/video1.PNG" width ="160" height ="288" >
@@ -52,10 +52,17 @@ end
 - 初始化配置
 
 ```objective-c
+
+#import "LGResStudy.h"
+#import <LGAlertUtil/LGAlertUtil.h>
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	[LGResConfig() initSpeechEngine];
    [LGAlert config];
 }
+
+ self.navigationController.navigationBar.translucent = NO;
 ```
 - 调用参数
 
@@ -92,4 +99,4 @@ end
 @property (nonatomic,copy) void (^NoteEntryBlock) (void);
 
 ```
-![调用参数](https://github.com/LYajun/LGResStudy/blob/master/Assets/config1.png)
+![调用参数](https://github.com/LYajun/LGResStudy/blob/master/Assets/config2.png)
