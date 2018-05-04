@@ -20,6 +20,7 @@
 #import <LGAlertUtil/LGAlertUtil.h>
 #import "RLGSpeechEngine.h"
 
+
 @interface RLGResStudyViewController ()<RLGViewTransferProtocol,RLGPopupMenuDelegate>
 
 
@@ -82,20 +83,22 @@
         RLGWordViewController *wordVC = [[RLGWordViewController alloc] initWithWord:word];
         [weakSelf.navigationController pushViewController:wordVC animated:YES];
     };
+    [self.presenter enterImportantWord];
 }
 - (void)moreClickEvent{
     NSArray *titles;
     NSArray *images;
-    if (self.resModel.rlgResType == voice) {
-        titles = @[@"电子词典",@"笔记",@"重启语音服务"];
-        images = @[RLG_GETBundleResource(@"lg_dic"),RLG_GETBundleResource(@"lg_note"),RLG_GETBundleResource(@"lg_restart")];
-    }else{
+//    if (self.resModel.rlgResType != text) {
+//        titles = @[@"电子词典",@"笔记",@"重启语音服务"];
+//        images = @[RLG_GETBundleResource(@"lg_dic"),RLG_GETBundleResource(@"lg_note"),RLG_GETBundleResource(@"lg_restart")];
+//    }else{
         titles = @[@"电子词典",@"笔记"];
         images = @[RLG_GETBundleResource(@"lg_dic"),RLG_GETBundleResource(@"lg_note")];
-    }
+//    }
     RLG_StopPlayer();
    RLGPopupMenu *menu = [[RLGPopupMenu alloc] initWithTitles:titles icons:images menuWidth:160 delegate:self];
     [menu showRelyOnView:self.moreBtn];
+    [self.presenter enterMoreTool];
 }
 - (void)RLGPopupMenuDidSelectedAtIndex:(NSInteger)index RLGPopupMenu:(RLGPopupMenu *)RLGPopupMenu{
     switch (index) {

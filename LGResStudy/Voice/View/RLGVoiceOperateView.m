@@ -213,6 +213,10 @@
         self.PlayIndexBlock(self.currentIndex);
     }
 }
+- (void)pause{
+    self.recordBtn.selected = YES;
+    [self playClickAction:self.recordBtn];
+}
 - (void)lastClickAction:(UIButton *) btn{
     [self.player pause];
     if (self.PlayIndexBlock) {

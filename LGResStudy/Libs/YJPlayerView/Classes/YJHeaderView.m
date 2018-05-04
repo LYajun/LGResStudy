@@ -12,7 +12,6 @@
 @interface YJHeaderView ()
 @property (nonatomic, strong) UIButton *backBtn;
 @property (nonatomic, strong) UILabel *titleLab;
-@property (nonatomic, strong) UIButton *moreBtn;
 
 @end
 @implementation YJHeaderView
@@ -36,34 +35,37 @@
         make.size.mas_equalTo(CGSizeMake(28, 28));
     }];
     
-    [self addSubview:self.moreBtn];
-    [self.moreBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self);
-        make.right.equalTo(self).offset(-10);
-        make.size.mas_equalTo(CGSizeMake(28, 28));
-    }];
-    
+  
     [self addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
         make.left.equalTo(self.backBtn.mas_right).offset(10);
-        make.right.equalTo(self.moreBtn.mas_left).offset(-20);
+        make.right.equalTo(self).offset(-10);
     }];
 }
 #pragma mark public
+- (void)setIsHideBakcBtn:(BOOL)isHideBakcBtn{
+    self.backBtn.hidden = isHideBakcBtn;
+    [self.backBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo((isHideBakcBtn ? 0 : 28));
+    }];
+}
 - (void)show{
      self.isShowing = YES;
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
-        self.moreBtn.hidden = NO;
-        if (self.isFullScreen) {
-            self.moreBtn.hidden = NO;
-        }
+        weakSelf.titleLab.hidden = NO;
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            if (weakSelf.isShowing) {
+                [weakSelf hide];
+            }
+        });
     }];
 }
 - (void)hide{
      self.isShowing = NO;
     [UIView animateWithDuration:0.5 animations:^{
-        self.moreBtn.hidden = YES;
         self.titleLab.hidden = YES;
     }];
 }
@@ -73,9 +75,6 @@
         [self.delegate backBtnDidClick];
     }
 }
-- (void)moreClickEvent:(UIButton *) btn{
-    
-}
 #pragma mark setter getter
 - (void)setVideoTitle:(NSString *)videoTitle{
     _videoTitle = videoTitle;
@@ -84,6 +83,7 @@
 - (void)setIsFullScreen:(BOOL)isFullScreen{
     _isFullScreen = isFullScreen;
     self.titleLab.hidden = !isFullScreen;
+    self.isHideBakcBtn = NO;
 }
 - (UIButton *)backBtn{
     if (!_backBtn) {
@@ -92,14 +92,6 @@
         [_backBtn addTarget:self action:@selector(backClickEvent:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _backBtn;
-}
-- (UIButton *)moreBtn{
-    if (!_moreBtn) {
-        _moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_moreBtn setImage:[UIImage imageNamed:[self getResourceFromBundleFileName:@"yj_more"]] forState:UIControlStateNormal];
-        [_moreBtn addTarget:self action:@selector(moreClickEvent:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _moreBtn;
 }
 - (UILabel *)titleLab{
     if (!_titleLab) {

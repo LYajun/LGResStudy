@@ -11,4 +11,6 @@
 @interface RLGResStudyPresenter : RLGHttpPresenter
 - (void)startRequest;
 - (void)studyModelChangeAtIndex:(NSInteger) index resType:(NSInteger) resType;
+- (void)enterMoreTool;
+- (void)enterImportantWord;
 @end

@@ -136,7 +136,12 @@
             }
         };
         _player.PlayFailBlock = ^{
-            [LGAlert showRedStatus:@"音频文件加载失败"];
+            [LGAlert hide];
+            [LGAlert alertWarningWithMessage:@"音频文件加载失败" canceTitle:@"退出" confirmTitle:@"重新加载" cancelBlock:^{
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+            } confirmBlock:^{
+                [weakSelf loadData];
+            }];
         };
         _player.SeekFinishBlock = ^{
         };

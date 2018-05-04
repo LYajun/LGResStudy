@@ -52,6 +52,13 @@
 		BA4A264320946A9100B27D0F /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264220946A9100B27D0F /* libiconv.tbd */; };
 		BA4A264520946A9B00B27D0F /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264420946A9B00B27D0F /* libbz2.tbd */; };
 		BA4A264720946AA300B27D0F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4A264620946AA300B27D0F /* libz.tbd */; };
+		BA4A264E20946E6500B27D0F /* RLGVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A264D20946E6500B27D0F /* RLGVideoViewController.m */; };
+		BA4A26542094712700B27D0F /* YJDynamicSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A26512094712700B27D0F /* YJDynamicSegment.m */; };
+		BA4A26552094712700B27D0F /* YJSegmentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A26532094712700B27D0F /* YJSegmentItem.m */; };
+		BA4A2658209473D900B27D0F /* RLGImportantTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A2657209473D900B27D0F /* RLGImportantTextViewController.m */; };
+		BA4A265B2094740E00B27D0F /* RLGVideoSubtitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A265A2094740E00B27D0F /* RLGVideoSubtitleViewController.m */; };
+		BA4A265E2094746100B27D0F /* RLGVideoDubMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A265D2094746100B27D0F /* RLGVideoDubMainViewController.m */; };
+		BA4A26612094747A00B27D0F /* RLGVideoDubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A26602094747A00B27D0F /* RLGVideoDubViewController.m */; };
 		BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */; };
 		BA5044782092FB3900F9CC25 /* native.res in Resources */ = {isa = PBXBuildFile; fileRef = BA5044702092FB3900F9CC25 /* native.res */; };
 		BA5044792092FB3900F9CC25 /* skeng-ios in Resources */ = {isa = PBXBuildFile; fileRef = BA5044712092FB3900F9CC25 /* skeng-ios */; };
@@ -78,6 +85,11 @@
 		BAC9F18C208CB11C00E2EB0B /* RLGWordHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F18B208CB11C00E2EB0B /* RLGWordHeaderView.m */; };
 		BAC9F18F208CB3B200E2EB0B /* RLGWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F18E208CB3B200E2EB0B /* RLGWordCell.m */; };
 		BAC9F192208CC39300E2EB0B /* RLGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9F191208CC39300E2EB0B /* RLGBaseViewController.m */; };
+		BAD9D8E6209956F9003C0F55 /* RLGKnowledgeFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD9D8E4209956F9003C0F55 /* RLGKnowledgeFlowLayout.m */; };
+		BAD9D8E92099592D003C0F55 /* RLGFlowLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD9D8E72099592D003C0F55 /* RLGFlowLabelCell.m */; };
+		BAD9D8EC2099A0C7003C0F55 /* RLGVideoDubMainTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD9D8EB2099A0C7003C0F55 /* RLGVideoDubMainTable.m */; };
+		BAD9D8EF2099C0FE003C0F55 /* RLGVideoDubOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD9D8EE2099C0FE003C0F55 /* RLGVideoDubOperateView.m */; };
+		BAD9D8F22099C363003C0F55 /* RLGVideoDubView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD9D8F12099C363003C0F55 /* RLGVideoDubView.m */; };
 		BAF4639F20888E6B00B386BD /* RLGStudyOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */; };
 		BAF463A220888F3C00B386BD /* RLGTipButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A120888F3C00B386BD /* RLGTipButton.m */; };
 		BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF463A72088941500B386BD /* RLGTextOperateView.m */; };
@@ -171,6 +183,20 @@
 		BA4A264220946A9100B27D0F /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		BA4A264420946A9B00B27D0F /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		BA4A264620946AA300B27D0F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BA4A264C20946E6500B27D0F /* RLGVideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoViewController.h; sourceTree = "<group>"; };
+		BA4A264D20946E6500B27D0F /* RLGVideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoViewController.m; sourceTree = "<group>"; };
+		BA4A26502094712700B27D0F /* YJDynamicSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJDynamicSegment.h; sourceTree = "<group>"; };
+		BA4A26512094712700B27D0F /* YJDynamicSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJDynamicSegment.m; sourceTree = "<group>"; };
+		BA4A26522094712700B27D0F /* YJSegmentItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJSegmentItem.h; sourceTree = "<group>"; };
+		BA4A26532094712700B27D0F /* YJSegmentItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJSegmentItem.m; sourceTree = "<group>"; };
+		BA4A2656209473D900B27D0F /* RLGImportantTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGImportantTextViewController.h; sourceTree = "<group>"; };
+		BA4A2657209473D900B27D0F /* RLGImportantTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGImportantTextViewController.m; sourceTree = "<group>"; };
+		BA4A26592094740E00B27D0F /* RLGVideoSubtitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoSubtitleViewController.h; sourceTree = "<group>"; };
+		BA4A265A2094740E00B27D0F /* RLGVideoSubtitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoSubtitleViewController.m; sourceTree = "<group>"; };
+		BA4A265C2094746100B27D0F /* RLGVideoDubMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubMainViewController.h; sourceTree = "<group>"; };
+		BA4A265D2094746100B27D0F /* RLGVideoDubMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubMainViewController.m; sourceTree = "<group>"; };
+		BA4A265F2094747A00B27D0F /* RLGVideoDubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubViewController.h; sourceTree = "<group>"; };
+		BA4A26602094747A00B27D0F /* RLGVideoDubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubViewController.m; sourceTree = "<group>"; };
 		BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RLGSpeechEngine.mm; sourceTree = "<group>"; };
 		BA50446B2092FB1F00F9CC25 /* RLGSpeechEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGSpeechEngine.h; sourceTree = "<group>"; };
 		BA50446E2092FB3900F9CC25 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
@@ -220,6 +246,16 @@
 		BAC9F18E208CB3B200E2EB0B /* RLGWordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGWordCell.m; sourceTree = "<group>"; };
 		BAC9F190208CC39300E2EB0B /* RLGBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGBaseViewController.h; sourceTree = "<group>"; };
 		BAC9F191208CC39300E2EB0B /* RLGBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGBaseViewController.m; sourceTree = "<group>"; };
+		BAD9D8E4209956F9003C0F55 /* RLGKnowledgeFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGKnowledgeFlowLayout.m; sourceTree = "<group>"; };
+		BAD9D8E5209956F9003C0F55 /* RLGKnowledgeFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGKnowledgeFlowLayout.h; sourceTree = "<group>"; };
+		BAD9D8E72099592D003C0F55 /* RLGFlowLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGFlowLabelCell.m; sourceTree = "<group>"; };
+		BAD9D8E82099592D003C0F55 /* RLGFlowLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGFlowLabelCell.h; sourceTree = "<group>"; };
+		BAD9D8EA2099A0C7003C0F55 /* RLGVideoDubMainTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubMainTable.h; sourceTree = "<group>"; };
+		BAD9D8EB2099A0C7003C0F55 /* RLGVideoDubMainTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubMainTable.m; sourceTree = "<group>"; };
+		BAD9D8ED2099C0FE003C0F55 /* RLGVideoDubOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubOperateView.h; sourceTree = "<group>"; };
+		BAD9D8EE2099C0FE003C0F55 /* RLGVideoDubOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubOperateView.m; sourceTree = "<group>"; };
+		BAD9D8F02099C363003C0F55 /* RLGVideoDubView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubView.h; sourceTree = "<group>"; };
+		BAD9D8F12099C363003C0F55 /* RLGVideoDubView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubView.m; sourceTree = "<group>"; };
 		BAF4639D20888E6B00B386BD /* RLGStudyOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGStudyOperateView.h; sourceTree = "<group>"; };
 		BAF4639E20888E6B00B386BD /* RLGStudyOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGStudyOperateView.m; sourceTree = "<group>"; };
 		BAF463A020888F3C00B386BD /* RLGTipButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGTipButton.h; sourceTree = "<group>"; };
@@ -331,6 +367,10 @@
 		BA3B7971208471E100C451DA /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				BA4A264820946B2F00B27D0F /* Controller */,
+				BA4A264A20946B2F00B27D0F /* Model */,
+				BA4A264B20946B2F00B27D0F /* Presenter */,
+				BA4A264920946B2F00B27D0F /* View */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -370,6 +410,7 @@
 				BA3B79DF208715ED00C451DA /* RLGVoicePlayer.m */,
 				BAFBF66D2088282500EC3FCA /* RLGAudioRecorder.h */,
 				BAFBF66E2088282500EC3FCA /* RLGAudioRecorder.m */,
+				BA4A264F2094711600B27D0F /* Segment */,
 				BAC35A7B208F13CA0040B251 /* SpeechEngine */,
 				BA3B79B32084CC2300C451DA /* ActivityIndicatorView */,
 				BA3B7976208475AD00C451DA /* Http */,
@@ -525,26 +566,26 @@
 		BA4A261620946A5600B27D0F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				BA4A261720946A5600B27D0F /* UIViewController+YJPlayerRotation.h */,
 				BA4A261820946A5600B27D0F /* YJBasePlayerView.h */,
-				BA4A261920946A5600B27D0F /* YJBrightnessView.m */,
-				BA4A261A20946A5600B27D0F /* YJPlayModel.h */,
-				BA4A261B20946A5600B27D0F /* UINavigationController+YJPlayerRotation.h */,
-				BA4A261C20946A5600B27D0F /* YJPlayerView.m */,
-				BA4A261D20946A5600B27D0F /* YJPlayStatus.h */,
-				BA4A261E20946A5600B27D0F /* YJFooterView.h */,
-				BA4A261F20946A5600B27D0F /* YJHeaderView.m */,
-				BA4A262020946A5600B27D0F /* UITabBarController+YJPlayerRotation.m */,
-				BA4A262120946A5600B27D0F /* YJBrightnessView.h */,
 				BA4A262220946A5600B27D0F /* YJBasePlayerView.m */,
-				BA4A262320946A5600B27D0F /* UIViewController+YJPlayerRotation.m */,
-				BA4A262420946A5600B27D0F /* YJPlayStatus.m */,
 				BA4A262520946A5600B27D0F /* YJPlayerView.h */,
+				BA4A261C20946A5600B27D0F /* YJPlayerView.m */,
+				BA4A262120946A5600B27D0F /* YJBrightnessView.h */,
+				BA4A261920946A5600B27D0F /* YJBrightnessView.m */,
+				BA4A261D20946A5600B27D0F /* YJPlayStatus.h */,
+				BA4A262420946A5600B27D0F /* YJPlayStatus.m */,
+				BA4A261A20946A5600B27D0F /* YJPlayModel.h */,
 				BA4A262620946A5600B27D0F /* YJPlayModel.m */,
-				BA4A262720946A5600B27D0F /* UINavigationController+YJPlayerRotation.m */,
+				BA4A261E20946A5600B27D0F /* YJFooterView.h */,
 				BA4A262820946A5600B27D0F /* YJFooterView.m */,
-				BA4A262920946A5600B27D0F /* UITabBarController+YJPlayerRotation.h */,
 				BA4A262A20946A5600B27D0F /* YJHeaderView.h */,
+				BA4A261F20946A5600B27D0F /* YJHeaderView.m */,
+				BA4A262920946A5600B27D0F /* UITabBarController+YJPlayerRotation.h */,
+				BA4A262020946A5600B27D0F /* UITabBarController+YJPlayerRotation.m */,
+				BA4A261720946A5600B27D0F /* UIViewController+YJPlayerRotation.h */,
+				BA4A262320946A5600B27D0F /* UIViewController+YJPlayerRotation.m */,
+				BA4A261B20946A5600B27D0F /* UINavigationController+YJPlayerRotation.h */,
+				BA4A262720946A5600B27D0F /* UINavigationController+YJPlayerRotation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -564,6 +605,65 @@
 				BA4A262F20946A5600B27D0F /* SGPlayer.framework */,
 			);
 			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA4A264820946B2F00B27D0F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A264C20946E6500B27D0F /* RLGVideoViewController.h */,
+				BA4A264D20946E6500B27D0F /* RLGVideoViewController.m */,
+				BA4A2656209473D900B27D0F /* RLGImportantTextViewController.h */,
+				BA4A2657209473D900B27D0F /* RLGImportantTextViewController.m */,
+				BA4A26592094740E00B27D0F /* RLGVideoSubtitleViewController.h */,
+				BA4A265A2094740E00B27D0F /* RLGVideoSubtitleViewController.m */,
+				BA4A265C2094746100B27D0F /* RLGVideoDubMainViewController.h */,
+				BA4A265D2094746100B27D0F /* RLGVideoDubMainViewController.m */,
+				BA4A265F2094747A00B27D0F /* RLGVideoDubViewController.h */,
+				BA4A26602094747A00B27D0F /* RLGVideoDubViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA4A264920946B2F00B27D0F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAD9D8E82099592D003C0F55 /* RLGFlowLabelCell.h */,
+				BAD9D8E72099592D003C0F55 /* RLGFlowLabelCell.m */,
+				BAD9D8E5209956F9003C0F55 /* RLGKnowledgeFlowLayout.h */,
+				BAD9D8E4209956F9003C0F55 /* RLGKnowledgeFlowLayout.m */,
+				BAD9D8EA2099A0C7003C0F55 /* RLGVideoDubMainTable.h */,
+				BAD9D8EB2099A0C7003C0F55 /* RLGVideoDubMainTable.m */,
+				BAD9D8ED2099C0FE003C0F55 /* RLGVideoDubOperateView.h */,
+				BAD9D8EE2099C0FE003C0F55 /* RLGVideoDubOperateView.m */,
+				BAD9D8F02099C363003C0F55 /* RLGVideoDubView.h */,
+				BAD9D8F12099C363003C0F55 /* RLGVideoDubView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA4A264A20946B2F00B27D0F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA4A264B20946B2F00B27D0F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BA4A264F2094711600B27D0F /* Segment */ = {
+			isa = PBXGroup;
+			children = (
+				BA4A26502094712700B27D0F /* YJDynamicSegment.h */,
+				BA4A26512094712700B27D0F /* YJDynamicSegment.m */,
+				BA4A26522094712700B27D0F /* YJSegmentItem.h */,
+				BA4A26532094712700B27D0F /* YJSegmentItem.m */,
+			);
+			path = Segment;
 			sourceTree = "<group>";
 		};
 		BA50446D2092FB3900F9CC25 /* ShengTong */ = {
@@ -791,11 +891,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA4A265B2094740E00B27D0F /* RLGVideoSubtitleViewController.m in Sources */,
+				BAD9D8EF2099C0FE003C0F55 /* RLGVideoDubOperateView.m in Sources */,
 				BA8F1D1520905D4D009B6CDD /* RLGVoiceTableHeader.m in Sources */,
 				BA50447A2092FB3900F9CC25 /* airecorder.c in Sources */,
 				BA504480209311CF00F9CC25 /* RLGVoiceRecordViewController.m in Sources */,
 				BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */,
+				BA4A2658209473D900B27D0F /* RLGImportantTextViewController.m in Sources */,
 				BA50447C2092FB3900F9CC25 /* aiplayer.c in Sources */,
+				BA4A26612094747A00B27D0F /* RLGVideoDubViewController.m in Sources */,
 				BA4A263620946A5600B27D0F /* YJPlayStatus.m in Sources */,
 				BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */,
 				BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */,
@@ -811,6 +915,7 @@
 				BAC35A87208F2B640040B251 /* TestEngineViewController.m in Sources */,
 				BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */,
 				BA4A263320946A5600B27D0F /* UITabBarController+YJPlayerRotation.m in Sources */,
+				BA4A26542094712700B27D0F /* YJDynamicSegment.m in Sources */,
 				BA3B79692084513900C451DA /* main.m in Sources */,
 				BA3B795B2084513700C451DA /* AppDelegate.m in Sources */,
 				BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */,
@@ -821,16 +926,20 @@
 				BAF463AE2088BBCC00B386BD /* RLGImportantWordView.m in Sources */,
 				BAC9F18F208CB3B200E2EB0B /* RLGWordCell.m in Sources */,
 				BAC9F189208CB04300E2EB0B /* RLGWordViewController.m in Sources */,
+				BA4A264E20946E6500B27D0F /* RLGVideoViewController.m in Sources */,
 				BA4A263820946A5600B27D0F /* UINavigationController+YJPlayerRotation.m in Sources */,
 				BA3B79DA2086F60A00C451DA /* RLGTextPresenter.m in Sources */,
 				BA3B79A420849F3C00C451DA /* RLGPresenter.m in Sources */,
 				BA4A263020946A5600B27D0F /* YJBrightnessView.m in Sources */,
+				BAD9D8E92099592D003C0F55 /* RLGFlowLabelCell.m in Sources */,
 				BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */,
 				BA3B79A12084856700C451DA /* RLGResModel.m in Sources */,
 				BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */,
+				BAD9D8E6209956F9003C0F55 /* RLGKnowledgeFlowLayout.m in Sources */,
 				BA4A263220946A5600B27D0F /* YJHeaderView.m in Sources */,
 				BA8F1D0C209055BF009B6CDD /* RLGVoiceViewController.m in Sources */,
 				BA3B79CB2085BFCF00C451DA /* RLGTextViewController.m in Sources */,
+				BAD9D8F22099C363003C0F55 /* RLGVideoDubView.m in Sources */,
 				BAC9F18C208CB11C00E2EB0B /* RLGWordHeaderView.m in Sources */,
 				BAFBF66F2088282500EC3FCA /* RLGAudioRecorder.m in Sources */,
 				BA50448620931C3000F9CC25 /* RLGVoiceRecordTable.m in Sources */,
@@ -840,13 +949,16 @@
 				BA3B797C20847D0300C451DA /* RLGResponseModel.m in Sources */,
 				BA3B79BD2084CC2300C451DA /* RLGActivityIndicatorBallPulseAnimation.m in Sources */,
 				BAF463B42089DFD000B386BD /* RLGPopupMenu.m in Sources */,
+				BA4A265E2094746100B27D0F /* RLGVideoDubMainViewController.m in Sources */,
 				BA3B79DD2087138D00C451DA /* RLGTextWordView.m in Sources */,
 				BA8F1D182090601B009B6CDD /* RLGVoiceOperateView.m in Sources */,
 				BAC9F192208CC39300E2EB0B /* RLGBaseViewController.m in Sources */,
 				BA3B79BE2084CC2300C451DA /* RLGActivityIndicatorView.m in Sources */,
 				BAF463B12089DB1100B386BD /* RLGTouchView.m in Sources */,
 				BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */,
+				BA4A26552094712700B27D0F /* YJSegmentItem.m in Sources */,
 				BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */,
+				BAD9D8EC2099A0C7003C0F55 /* RLGVideoDubMainTable.m in Sources */,
 				BA4A263920946A5600B27D0F /* YJFooterView.m in Sources */,
 				BA4A263420946A5600B27D0F /* YJBasePlayerView.m in Sources */,
 			);

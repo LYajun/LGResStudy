@@ -12,11 +12,12 @@
 #import "YJBrightnessView.h"
 #import <Masonry/Masonry.h>
 #import "YJPlayStatus.h"
+#import "RLGCommon.h"
 
 @interface YJPlayerView ()<YJPlayModelDelegate,YJFooterViewDelegate,YJHeaderViewDelegate>
 @property (nonatomic, strong) YJHeaderView *headerView;
 @property (nonatomic, strong) YJFooterView *footerView;
-
+@property (nonatomic, strong) UILabel *subTitleL;
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
 /** 滑块是否按下 */
 @property (nonatomic, assign) BOOL progressSilderTouching;
@@ -61,8 +62,8 @@
     };
     // 重新播放
     [YJPlayStatus sharePlayStatus].AgainPlayBlock = ^{
-        weakSelf.footerView.currentTime = 0;
-        [weakSelf.playModel playSlideSeekToTimeAtSlideValue:0];
+        [[YJPlayStatus sharePlayStatus] setViewFinishShow:NO];
+        [weakSelf setVideoUrl:weakSelf.currentUrl isPlay:YES];
     };
     
     self.playModel = [[YJPlayModel alloc] init];
@@ -87,8 +88,31 @@
         make.center.equalTo(self);
     }];
     [YJBrightnessView showBrightnessViewAtView:self];
+    
+    [self addSubview:self.subTitleL];
+    [self.subTitleL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.centerX.equalTo(self);
+        make.bottom.mas_equalTo(self.footerView.mas_top);
+    }];
 }
 #pragma mark - public action
+- (RLGResVideoModel *)currentVideoModel{
+    return self.subTitleModels[self.dubIndex];
+}
+- (void)setDubIndex:(NSInteger)dubIndex{
+    _dubIndex = dubIndex;
+    self.footerView.duration = self.currentVideoModel.Timelength.floatValue/1000;
+    self.footerView.playProgress = 0;
+    self.footerView.currentTime = 0;
+}
+- (void)setIsSilence:(BOOL)isSilence{
+    _isSilence = isSilence;
+    self.playModel.isSilence = isSilence;
+}
+- (void)setIsHideBakcBtn:(BOOL)isHideBakcBtn{
+    _isHideBakcBtn = isHideBakcBtn;
+    self.headerView.isHideBakcBtn = isHideBakcBtn;
+}
 - (void)setVideoUrl:(NSString *)url isPlay:(BOOL)isPlay{
     self.currentUrl = url;
     self.isImmediatelyPlay = isPlay;
@@ -98,7 +122,6 @@
         [self.playModel startPlayWithPath:url];
     }
     if (!isPlay) {
-        [[YJPlayStatus sharePlayStatus] setViewPlayShow:YES];
         self.footerView.isPause = YES;
     }
 }
@@ -110,6 +133,11 @@
 }
 #pragma mark - private action
 - (void)play{
+    [[YJPlayStatus sharePlayStatus] setViewPlayShow:NO];
+    if (self.isDubMode && (self.currentTimeValue == 0 || self.currentTimeValue >= 1)) {
+        CGFloat sliderValue = self.currentVideoModel.Starttime.floatValue/1000/self.playModel.duration;
+         [self.playModel playSlideSeekToTimeAtSlideValue:sliderValue];
+    }
     self.footerView.isPause = NO;
     [self.playModel play];
 }
@@ -118,6 +146,7 @@
     [self.playModel pause];
 }
 - (void)stop{
+    self.subTitleL.text = @"";
     self.footerView.isPause = NO;
     [self.playModel stop];
 }
@@ -126,7 +155,7 @@
     [self pause];
 }
 - (void)appDidEnterPlayground:(NSNotification *)note{
-     [self play];
+     [self pause];
 }
 #pragma mark - 手势方法
 - (void)singleTap:(UITapGestureRecognizer *)tap{
@@ -252,6 +281,9 @@
         self.isFullScreenByUser = YES;
         [self interfaceOrientation:UIInterfaceOrientationPortrait];
         self.isFullScreenByUser = NO;
+        if (self.isHideBakcBtn) {
+            self.headerView.isHideBakcBtn = YES;
+        }
     }else{
         if (self.BackClickBlock) {
             self.BackClickBlock();
@@ -263,6 +295,9 @@
      self.progressSilderTouching = YES;
 }
 - (void)progressSliderDidTouchUpWithValue:(CGFloat)sliderValue{
+    if (self.isDubMode) {
+        sliderValue = sliderValue*self.footerView.duration/self.playModel.duration;
+    }
     self.progressSilderTouching = NO;
     [self.playModel playSlideSeekToTimeAtSlideValue:sliderValue];
     self.footerView.isPause = NO;
@@ -301,11 +336,17 @@
             break;
         case YJPlayerStateReadyToPlay:
             text = @"Prepare";
-            self.footerView.duration = self.playModel.duration;
+            if (self.isDubMode) {
+                self.footerView.duration = self.currentVideoModel.Timelength.floatValue/1000;
+            }else{
+                self.footerView.duration = self.playModel.duration;
+            }
             [self.indicatorView stopAnimating];
             if (self.isImmediatelyPlay) {
                 self.footerView.isPause = NO;
                 [self play];
+            }else{
+                 [[YJPlayStatus sharePlayStatus] setViewPlayShow:YES];
             }
             self.panEnable = YES;
             break;
@@ -323,9 +364,12 @@
         case YJPlayerStateSuspend:
             [self.indicatorView stopAnimating];
             text = @"Suspend";
-            [[YJPlayStatus sharePlayStatus] showViewPause];
+            if (!self.isDubMode) {
+                [[YJPlayStatus sharePlayStatus] showViewPause];
+            }
             break;
         case YJPlayerStateFinished:
+             [self.indicatorView stopAnimating];
             text = @"Finished";
             [[YJPlayStatus sharePlayStatus] setViewFinishShow:YES];
             [self.footerView hide];
@@ -340,11 +384,43 @@
     NSLog(@"播放状态:%@",text);
 }
 - (void)playerProgress:(CGFloat)progress{
+    if (self.isDubMode && progress > 0) {
+        CGFloat progressTime = progress*self.playModel.duration;
+        if (progressTime*1000 >= (self.currentVideoModel.Starttime.floatValue + self.currentVideoModel.Timelength.floatValue)) {
+            self.footerView.isPause = YES;
+            [self playBtnDidClickWithIsPlayStatus:NO];
+        }
+        progress = (progressTime - self.currentVideoModel.Starttime.floatValue/1000) / self.footerView.duration;
+        progress = progress > 1 ? 1 : progress;
+    }
     if (!self.progressSilderTouching) {
         self.footerView.playProgress = progress;
     }
     self.currentTimeValue = progress;
     self.footerView.currentTime = progress*self.footerView.duration;
+    if (self.isShowDub) {
+        [self setSubTitleAtCurrentPlayProgress:progress*self.footerView.duration];
+    }
+}
+- (void)setSubTitleAtCurrentPlayProgress:(CGFloat)currentPlayProgress{
+    CGFloat playTime = currentPlayProgress * 1000;
+    for (int i = 0; i < self.subTitleModels.count; i++) {
+        RLGResVideoModel *videoModel = self.subTitleModels[i];
+        if (playTime >= videoModel.Starttime.floatValue && playTime <= (videoModel.Starttime.floatValue + videoModel.Timelength.floatValue)) {
+            NSMutableAttributedString *attr = videoModel.Etext_attr.mutableCopy;
+            NSString *text = attr.string;
+            if ([text hasSuffix:@"\n"]) {
+                text = [text substringToIndex:text.length-1];
+            }
+            attr = [[NSMutableAttributedString alloc] initWithString:text];
+            [attr addAttributes:@{NSStrokeWidthAttributeName : @(-2),NSStrokeColorAttributeName : [UIColor blackColor],NSFontAttributeName : [UIFont systemFontOfSize:14],NSForegroundColorAttributeName : [UIColor whiteColor]} range:NSMakeRange(0, attr.length)];
+            self.subTitleL.attributedText = attr;
+            break;
+        }
+    }
+    if (currentPlayProgress >= self.footerView.duration-0.1) {
+        self.subTitleL.text = @"";
+    }
 }
 - (void)playerBufferValue:(CGFloat)bufferValue{
     self.footerView.bufferValue = bufferValue;
@@ -361,12 +437,26 @@
     [super setIsFullScreen:isFullScreen];
     self.footerView.isFullScreen = isFullScreen;
     self.headerView.isFullScreen = isFullScreen;
+    if (self.isHideBakcBtn) {
+        self.headerView.isHideBakcBtn = !isFullScreen;
+    }
 }
 - (UIActivityIndicatorView *)indicatorView{
     if (!_indicatorView) {
         _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     }
     return _indicatorView;
+}
+- (UILabel *)subTitleL{
+    if (!_subTitleL) {
+        _subTitleL = [UILabel new];
+        _subTitleL.numberOfLines = 0;
+        _subTitleL.textColor = [UIColor colorWithWhite:1.0 alpha:1.0];
+        _subTitleL.backgroundColor = [UIColor clearColor];
+        _subTitleL.textAlignment = NSTextAlignmentCenter;
+        _subTitleL.font = [UIFont systemFontOfSize:14];
+    }
+    return _subTitleL;
 }
 - (YJHeaderView *)headerView{
     if (!_headerView) {

@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger,RLGResType){
 /** 新增: Etext富文本*/
 @property (nonatomic,strong) NSMutableAttributedString *Etext_attr;
 @property (nonatomic,copy) NSString *Ctext;
+@property (nonatomic,strong) NSMutableAttributedString *Ctext_attr;
 /** 新增: 该句录音文件名（多个文件名用","隔开） */
 @property (nonatomic,copy) NSString *recordNames;
 /** 新增: 录音最高得分 */

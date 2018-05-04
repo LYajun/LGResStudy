@@ -15,6 +15,14 @@
 @implementation YJPlayModel
 
 #pragma mark - public action
+- (void)setIsSilence:(BOOL)isSilence{
+    _isSilence = isSilence;
+    if (isSilence) {
+        self.player.volume = 0;
+    }else{
+        self.player.volume = 1.0;
+    }
+}
 - (void)startPlayWithUrl:(NSString *)url{
     [self.player replaceVideoWithURL:[NSURL URLWithString:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
 }

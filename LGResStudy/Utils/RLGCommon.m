@@ -94,6 +94,13 @@ NSArray *RLG_VoiceGifs(void){
     }
     return @[[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/voice01.png",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/voice02.png",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/voice03.png",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/voice04.png",bundlePath]]];
 }
+NSArray *RLG_RecordGifs(void){
+    NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"Frameworks/LGResStudy.framework/LGResStudy.bundle"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:bundlePath]) {
+        bundlePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"LGResStudy.bundle"];
+    }
+    return @[[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/dub_gif1",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/dub_gif2",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/dub_gif3",bundlePath]],[[UIImage alloc]initWithContentsOfFile:[NSString stringWithFormat:@"%@/dub_gif4",bundlePath]]];
+}
 UIColor *RLG_ThemeColor(void){
     return RLG_Color(0x1379EC);
 }

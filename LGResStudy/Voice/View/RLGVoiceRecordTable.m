@@ -346,12 +346,13 @@
     NSMutableArray *arr = [NSMutableArray arrayWithArray:self.videoModel.recordNameList];
     NSString *fullpath = [[RLGSpeechEngine shareInstance].recordDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.wav",arr[indexPath.row]]];
     __weak typeof(self) weakSelf = self;
+    [self.player stopPlay];
     [[RLGSpeechEngine shareInstance] removeRecordFileAtPath:fullpath complete:^(BOOL success) {
         if (success) {
             [arr removeObjectAtIndex:indexPath.row];
             weakSelf.videoModel.recordNames = [arr componentsJoinedByString:@","];
             NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
-            [plist setObject: weakSelf.videoModel.recordNames forKey: weakSelf.videoModel.SenID];
+            [plist setObject: weakSelf.videoModel.recordNames forKey: weakSelf.videoModel.OrgID];
             [plist writeToFile:RLG_SpeechRecordNamePath() atomically:false];
             
             RLGSpeechResultModel *resultModel = self.videoModel.markModels[indexPath.row];

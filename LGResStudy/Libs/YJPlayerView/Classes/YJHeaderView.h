@@ -16,6 +16,8 @@
 @property (nonatomic,assign) BOOL isFullScreen;
 /** 是否正在显示 */
 @property (nonatomic,assign) BOOL isShowing;
+/** 是否隐藏返回按钮 */
+@property (nonatomic,assign) BOOL isHideBakcBtn;
 /** 标题 */
 @property (nonatomic,copy) NSString *videoTitle;
 

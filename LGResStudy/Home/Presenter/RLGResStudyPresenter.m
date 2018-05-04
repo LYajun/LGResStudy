@@ -15,11 +15,13 @@
 #import <MJExtension/MJExtension.h>
 #import "RLGViewTransferProtocol.h"
 #import "RLGVoiceViewController.h"
+#import "RLGVideoViewController.h"
 
 @interface RLGResStudyPresenter ()
 {
     RLGTextViewController *wTextVC;
     RLGVoiceViewController *wVoiceVC;
+    RLGVideoViewController *wVideoVC;
 }
 @end
 @implementation RLGResStudyPresenter
@@ -44,10 +46,28 @@
         }
             break;
         case video:
-            
+        {
+            if ([wVideoVC respondsToSelector:@selector(studyModelChangeAtIndex:)]) {
+                [wVideoVC studyModelChangeAtIndex:index];
+            }
+        }
             break;
         default:
             break;
+    }
+}
+- (void)enterMoreTool{
+    if ([wVideoVC respondsToSelector:@selector(clickNavBarMoreTool)]) {
+        [wVideoVC clickNavBarMoreTool];
+    }
+    if ([wVoiceVC respondsToSelector:@selector(clickNavBarMoreTool)]) {
+        [wVoiceVC clickNavBarMoreTool];
+    }
+    
+}
+- (void)enterImportantWord{
+    if ([wVoiceVC respondsToSelector:@selector(enterImportantWord)]) {
+        [wVoiceVC enterImportantWord];
     }
 }
 - (void)enterResDetailModuleWithResModel:(RLGResModel *) resModel{
@@ -77,7 +97,16 @@
         }
             break;
         case video:
-            
+        {
+            wVideoVC = [[RLGVideoViewController alloc] init];
+            wVideoVC.view.frame = CGRectMake(0, 0, RLG_ScreenWidth(), RLG_ScreenHeight()- RLG_NaviBarHeight(self.view));
+            [studyVC.view addSubview:wVideoVC.view];
+            [studyVC addChildViewController:wVideoVC];
+            if ([wVideoVC respondsToSelector:@selector(updateData:)]) {
+                [wVideoVC updateData:resModel];
+            }
+            wVideoVC.ownController = self.view;
+        }
             break;
         default:
             break;

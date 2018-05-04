@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger,YJPlayerState) {
 @interface YJPlayModel : NSObject
 /** 空页面所在视图 */
 @property (nonatomic,strong) UIView *ownView;
+/** 是否静音 */
+@property (nonatomic,assign) BOOL isSilence;
 /** 播放代理 */
 @property (nonatomic,assign) id<YJPlayModelDelegate> delegate;
 - (void)startPlayWithUrl:(NSString *) url;

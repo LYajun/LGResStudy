@@ -14,7 +14,7 @@
 #import "RLGResponseModel.h"
 #import "RLGWordModel.h"
 
-static CGFloat timeoutInterval = 15;
+static CGFloat timeoutInterval = 20;
 @interface RLGHttpClient ()
 @property (nonatomic,assign) id<RLGHttpResponseProtocol> responder;
 @end

@@ -23,6 +23,7 @@ RLGConfig *LGResConfig(void);
 UIViewController *LGResStudyController(void);
 BOOL RLG_PredicateMatch(NSString *text,NSString *matchFormat);
 NSArray *RLG_VoiceGifs(void);
+NSArray *RLG_RecordGifs(void);
 UIColor *RLG_ThemeColor(void);
 NSString *RLG_Time(NSInteger timeCount);
 

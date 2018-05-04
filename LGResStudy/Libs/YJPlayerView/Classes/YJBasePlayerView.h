@@ -39,6 +39,8 @@ typedef NS_ENUM(NSInteger, PanDirection){
 -(void)panDirection:(UIPanGestureRecognizer *)pan;
 /** 平移手势开关 */
 @property (nonatomic,assign) BOOL panEnable;
+/** 状态栏开关 */
+@property (nonatomic,assign) BOOL hideStateBar;
 /** 相关通知方法 */
 - (void)appDidEnterBackground:(NSNotification *)note;
 - (void)appDidEnterPlayground:(NSNotification *)note;

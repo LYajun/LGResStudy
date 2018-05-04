@@ -18,6 +18,7 @@
 - (instancetype)initWithFrame:(CGRect)frame voiceUrl:(NSString *) voiceUrl;
 - (void)stopPlay;
 - (void)play;
+- (void)pause;
 - (void)updateInfo;
 - (void)resetSetup;
 @end

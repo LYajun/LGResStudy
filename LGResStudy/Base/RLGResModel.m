@@ -14,10 +14,15 @@
     _Etext = Etext;
     _Etext_attr = RLG_AttributedString(Etext, 16);
 }
-- (void)setSenID:(NSString *)SenID{
-    _SenID = SenID;
-     NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
-    _recordNames = [plist objectForKey:SenID];
+- (void)setCtext:(NSString *)Ctext{
+    _Ctext = Ctext;
+    _Ctext_attr = RLG_AttributedString(Ctext, 16);
+}
+
+- (void)setOrgID:(NSString *)OrgID{
+    _OrgID = OrgID;
+    NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
+    _recordNames = [plist objectForKey:OrgID];
 }
 - (NSString *)maxScore{
     if (!_maxScore) {

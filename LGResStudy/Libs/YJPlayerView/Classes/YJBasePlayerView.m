@@ -77,7 +77,7 @@
     //重置状态条
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     //恢复默认状态栏显示与否
-    self.statusBar.hidden = self.isFullScreen;
+    self.statusBar.hidden = !self.hideStateBar ? self.isFullScreen : YES;
     [self removeFromSuperview];
     // 移除观察者
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -147,7 +147,7 @@
         self.transform = CGAffineTransformMakeRotation(0);
     }];
     //设置是否隐藏
-    self.statusBar.hidden = self.isFullScreen;
+    self.statusBar.hidden = !self.hideStateBar ? self.isFullScreen : YES;
     [self removeFromSuperview];
     [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
     [self.fatherView addSubview:self];
@@ -166,7 +166,7 @@
     }
     
     //设置是否隐藏
-    self.statusBar.hidden = _isFullScreen;
+    self.statusBar.hidden = !self.hideStateBar ? self.isFullScreen : YES;
     
     [self removeFromSuperview];
     

@@ -84,7 +84,7 @@
             videoModel.recordNames = [videoModel.recordNames stringByAppendingString:recordID];
             
             NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:RLG_SpeechRecordNamePath()];
-            [plist setObject:videoModel.recordNames forKey:videoModel.SenID];
+            [plist setObject:videoModel.recordNames forKey:videoModel.OrgID];
             [plist writeToFile:RLG_SpeechRecordNamePath() atomically:false];
         }
         if ([weakSelf.ownController respondsToSelector:@selector(speechDidFinish)]) {

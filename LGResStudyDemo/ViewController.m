@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     [LGAlert config];
-    wHttpIp = @"http://192.168.129.44:8050";
+    wHttpIp = @"http://192.168.3.155:8051";
 }
 - (IBAction)pushacton:(id)sender {
     TestEngineViewController *testVC = [[TestEngineViewController alloc] init];
@@ -41,18 +41,11 @@
 - (IBAction)video:(UIButton *)sender {
     [self startResStudywithGUID:@"CCAE19162CIB60005PW"];
 }
-- (IBAction)segment:(UISegmentedControl *)sender {
-    if (sender.selectedSegmentIndex == 0) {
-        wHttpIp = @"http://192.168.129.44:8050";
-    }else{
-        wHttpIp = @"http://zh.lancooecp.com:8031";
-    }
-}
 - (void)startResStudywithGUID:(NSString *) GUID{
     LGResConfig().resUrl = [wHttpIp stringByAppendingString:@"/FreeStudyCloudApi/Resources/GetNewStudyResInfo"];
     LGResConfig().GUID = GUID;
-    LGResConfig().UserID = @"tcstu1";
-    LGResConfig().Token = @"F8DD8993-BC3D-4ACA-A125-71D04AC77E52";
+    LGResConfig().UserID = @"zxstu81";
+    LGResConfig().Token = @"6EF0A4C1-2A8D-4641-A9E4-F17C923E6CED";
     LGResConfig().Source = @"I";
     
     LGResConfig().wordUrl = [wHttpIp stringByAppendingString:@"/FreeStudyCloudApi/Resources/GetCourseware"];

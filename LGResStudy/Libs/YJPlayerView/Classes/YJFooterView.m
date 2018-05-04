@@ -82,14 +82,27 @@
 #pragma mark public
 - (void)show{
     self.isShowing = YES;
+    __weak typeof(self) weakSelf = self;
     [UIView animateWithDuration:0.5 animations:^{
-        self.hidden = NO;
+        weakSelf.hidden = NO;
+        [weakSelf mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(44);
+        }];
+    } completion:^(BOOL finished) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 3 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            if (weakSelf.isShowing) {
+                [weakSelf hide];
+            }
+        });
     }];
 }
 - (void)hide{
     self.isShowing = NO;
     [UIView animateWithDuration:0.5 animations:^{
         self.hidden = YES;
+        [self mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(0);
+        }];
     }];
 }
 #pragma mark private action

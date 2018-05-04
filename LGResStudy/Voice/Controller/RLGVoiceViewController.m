@@ -33,10 +33,10 @@
 }
 - (void)dealloc{
     RLG_Log(@"RLGVoiceViewController dealloc");
+    [[RLGSpeechEngine shareInstance] stopEngine];
 }
 - (void)initUI{
     self.view.backgroundColor = [UIColor whiteColor];
-
 }
 - (void)layoutUI{
     [self.view addSubview:self.operateView];
@@ -56,6 +56,12 @@
 - (void)updateData:(RLGResModel *)data{
     self.resModel = data;
     [self layoutUI];
+}
+- (void)clickNavBarMoreTool{
+    [self.operateView pause];
+}
+- (void)enterImportantWord{
+    [self.operateView pause];
 }
 - (void)selectImporKnText:(NSString *)text{
     [self.presenter startRequestWithWord:text];

@@ -60,31 +60,15 @@
                                     <action selector="video:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SuA-wC-yeG"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="UhY-tO-rcM">
-                                <rect key="frame" x="10" y="84" width="355" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Kv0-dQ-GLa"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="192.168.129.44"/>
-                                    <segment title="zh.lancooecp.com"/>
-                                </segments>
-                                <connections>
-                                    <action selector="segment:" destination="BYZ-38-t0r" eventType="valueChanged" id="L2f-JJ-6OF"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="UhY-tO-rcM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="25Y-8u-kbx"/>
                             <constraint firstItem="MJY-Ys-6Ak" firstAttribute="top" secondItem="T3Q-u0-QxC" secondAttribute="bottom" constant="50" id="4cd-Tr-jzj"/>
                             <constraint firstItem="CIq-bw-dVp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cfj-9U-rpV"/>
-                            <constraint firstItem="UhY-tO-rcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eX2-Ak-M9R"/>
                             <constraint firstItem="CIq-bw-dVp" firstAttribute="top" secondItem="MJY-Ys-6Ak" secondAttribute="bottom" constant="50" id="nPy-lp-N9a"/>
                             <constraint firstItem="MJY-Ys-6Ak" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="s3M-LC-CeT"/>
                             <constraint firstItem="T3Q-u0-QxC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ur2-bu-4jx"/>
                             <constraint firstItem="MJY-Ys-6Ak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x1e-De-ILM"/>
-                            <constraint firstItem="UhY-tO-rcM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zWN-2p-oVf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
