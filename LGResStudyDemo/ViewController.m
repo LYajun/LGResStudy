@@ -11,10 +11,6 @@
 
 #import "TestEngineViewController.h"
 @interface ViewController ()
-{
-    NSString *wHttpIp;
-}
-
 @end
 
 @implementation ViewController
@@ -22,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    
-    wHttpIp = @"http://192.168.3.155:8051";
 }
 - (IBAction)pushacton:(id)sender {
     TestEngineViewController *testVC = [[TestEngineViewController alloc] init];
@@ -42,13 +36,13 @@
     [self startResStudywithGUID:@"CCAE19162CIB60005PW"];
 }
 - (void)startResStudywithGUID:(NSString *) GUID{
-    LGResConfig().resUrl = [wHttpIp stringByAppendingString:@"/FreeStudyCloudApi/Resources/GetNewStudyResInfo"];
+    LGResConfig().resUrl = @"http://192.168.3.155:8051/FreeStudyCloudApi/Resources/GetNewStudyResInfo";
     LGResConfig().GUID = GUID;
     LGResConfig().UserID = @"zxstu81";
     LGResConfig().Token = @"6EF0A4C1-2A8D-4641-A9E4-F17C923E6CED";
     LGResConfig().Source = @"I";
     
-    LGResConfig().wordUrl = [wHttpIp stringByAppendingString:@"/FreeStudyCloudApi/Resources/GetCourseware"];
+    LGResConfig().wordUrl = @"http://192.168.3.155:8051/FreeStudyCloudApi/Resources/GetCourseware";
     LGResConfig().parameters = @{
                                  @"Knowledge":@"",
                                  @"levelCode":@""

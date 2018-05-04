@@ -20,8 +20,6 @@
 /** 资源网络地址 */
 @property (nonatomic,copy) NSString *resUrl;
 
-
-
 /** 词典地址 */
 @property (nonatomic,copy) NSString *wordUrl;
 /** 请求参数 */
