@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LGResStudy.h"
+#import <LGAlertUtil/LGAlertUtil.h>
 @interface AppDelegate ()
 
 @end
@@ -19,8 +20,11 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"lg_navBar_bg"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    
    [LGResConfig() initSpeechEngine];
-    // Override point for customization after application launch.
+    [LGAlert config];
+ 
     return YES;
 }
 

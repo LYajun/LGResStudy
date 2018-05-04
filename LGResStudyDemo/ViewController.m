@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "LGResStudy.h"
-#import <LGAlertUtil/LGAlertUtil.h>
+
 #import "TestEngineViewController.h"
 @interface ViewController ()
 {
@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    [LGAlert config];
+    
     wHttpIp = @"http://192.168.3.155:8051";
 }
 - (IBAction)pushacton:(id)sender {
