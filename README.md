@@ -10,6 +10,7 @@
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/text4.PNG" width ="160" height ="288" >
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/text5.PNG" width ="160" height ="288" >
  </div>
+ 
 >	声文
 
 <div align="left">
@@ -18,6 +19,7 @@
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/voice3.PNG" width ="160" height ="288" >
 <img src="https://github.com/LYajun/LGResStudy/blob/master/Assets/voice4.PNG" width ="160" height ="288" >
  </div>
+ 
 >	视文
 
 <div align="left">
