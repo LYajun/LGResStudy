@@ -111,12 +111,10 @@
             __weak typeof(self) weakSelf = self;
             [[RLGSpeechEngine shareInstance] initResult:^(BOOL success) {
                 [LGAlert showSuccessWithStatus:@"语音评测服务已启动"];
-                [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
                 RLGResContentModel *contentModel = weakSelf.resModel.Reslist.firstObject;
                 [weakSelf.playerView setVideoUrl:contentModel.ResMediaPath isPlay:NO];
             }];
         }else{
-            [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
             RLGResContentModel *contentModel = self.resModel.Reslist.firstObject;
             [self.playerView setVideoUrl:contentModel.ResMediaPath isPlay:NO];
         }

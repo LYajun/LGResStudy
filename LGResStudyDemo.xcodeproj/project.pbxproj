@@ -59,16 +59,17 @@
 		BA4A265B2094740E00B27D0F /* RLGVideoSubtitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A265A2094740E00B27D0F /* RLGVideoSubtitleViewController.m */; };
 		BA4A265E2094746100B27D0F /* RLGVideoDubMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A265D2094746100B27D0F /* RLGVideoDubMainViewController.m */; };
 		BA4A26612094747A00B27D0F /* RLGVideoDubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A26602094747A00B27D0F /* RLGVideoDubViewController.m */; };
-		BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */; };
-		BA5044782092FB3900F9CC25 /* native.res in Resources */ = {isa = PBXBuildFile; fileRef = BA5044702092FB3900F9CC25 /* native.res */; };
-		BA5044792092FB3900F9CC25 /* skeng-ios in Resources */ = {isa = PBXBuildFile; fileRef = BA5044712092FB3900F9CC25 /* skeng-ios */; };
-		BA50447A2092FB3900F9CC25 /* airecorder.c in Sources */ = {isa = PBXBuildFile; fileRef = BA5044722092FB3900F9CC25 /* airecorder.c */; };
-		BA50447B2092FB3900F9CC25 /* skegn.provision in Resources */ = {isa = PBXBuildFile; fileRef = BA5044732092FB3900F9CC25 /* skegn.provision */; };
-		BA50447C2092FB3900F9CC25 /* aiplayer.c in Sources */ = {isa = PBXBuildFile; fileRef = BA5044742092FB3900F9CC25 /* aiplayer.c */; };
-		BA50447D2092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5044752092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a */; };
+		BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.m */; };
 		BA504480209311CF00F9CC25 /* RLGVoiceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA50447F209311CF00F9CC25 /* RLGVoiceRecordViewController.m */; };
 		BA504483209315D400F9CC25 /* RLGVoiceRecordOperateView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA504482209315D400F9CC25 /* RLGVoiceRecordOperateView.m */; };
 		BA50448620931C3000F9CC25 /* RLGVoiceRecordTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA50448520931C3000F9CC25 /* RLGVoiceRecordTable.m */; };
+		BA69747720A0381E002BCDA0 /* KYTestConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BA69746720A0381D002BCDA0 /* KYTestConfig.m */; };
+		BA69747820A0381E002BCDA0 /* KYStartEngineConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = BA69746820A0381D002BCDA0 /* KYStartEngineConfig.m */; };
+		BA69747920A0381E002BCDA0 /* KYTestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA69746920A0381D002BCDA0 /* KYTestEngine.m */; };
+		BA69747A20A0381E002BCDA0 /* KYPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BA69746E20A0381E002BCDA0 /* KYPlayer.m */; };
+		BA69747B20A0381E002BCDA0 /* KYRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA69747220A0381E002BCDA0 /* KYRecorder.m */; };
+		BA69747C20A0381E002BCDA0 /* skegn.provision in Resources */ = {isa = PBXBuildFile; fileRef = BA69747420A0381E002BCDA0 /* skegn.provision */; };
+		BA69747D20A0381E002BCDA0 /* libskegn-0-ios-1.0.11-20180122114347.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA69747520A0381E002BCDA0 /* libskegn-0-ios-1.0.11-20180122114347.a */; };
 		BA8F1D0C209055BF009B6CDD /* RLGVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D0B209055BF009B6CDD /* RLGVoiceViewController.m */; };
 		BA8F1D0F2090568B009B6CDD /* RLGVoiceTable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D0E2090568B009B6CDD /* RLGVoiceTable.m */; };
 		BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8F1D112090577C009B6CDD /* RLGVoiceTableCell.m */; };
@@ -197,24 +198,28 @@
 		BA4A265D2094746100B27D0F /* RLGVideoDubMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubMainViewController.m; sourceTree = "<group>"; };
 		BA4A265F2094747A00B27D0F /* RLGVideoDubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVideoDubViewController.h; sourceTree = "<group>"; };
 		BA4A26602094747A00B27D0F /* RLGVideoDubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVideoDubViewController.m; sourceTree = "<group>"; };
-		BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = RLGSpeechEngine.mm; sourceTree = "<group>"; };
+		BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RLGSpeechEngine.m; sourceTree = "<group>"; };
 		BA50446B2092FB1F00F9CC25 /* RLGSpeechEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RLGSpeechEngine.h; sourceTree = "<group>"; };
-		BA50446E2092FB3900F9CC25 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
-		BA50446F2092FB3900F9CC25 /* aiplayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aiplayer.h; sourceTree = "<group>"; };
-		BA5044702092FB3900F9CC25 /* native.res */ = {isa = PBXFileReference; lastKnownFileType = file; path = native.res; sourceTree = "<group>"; };
-		BA5044712092FB3900F9CC25 /* skeng-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "skeng-ios"; sourceTree = "<group>"; };
-		BA5044722092FB3900F9CC25 /* airecorder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = airecorder.c; sourceTree = "<group>"; };
-		BA5044732092FB3900F9CC25 /* skegn.provision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skegn.provision; sourceTree = "<group>"; };
-		BA5044742092FB3900F9CC25 /* aiplayer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aiplayer.c; sourceTree = "<group>"; };
-		BA5044752092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libskegn-2-ios-1.0.8-20170726120101.a"; sourceTree = "<group>"; };
-		BA5044762092FB3900F9CC25 /* airecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = airecorder.h; sourceTree = "<group>"; };
-		BA5044772092FB3900F9CC25 /* wavehdr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wavehdr.h; sourceTree = "<group>"; };
 		BA50447E209311CF00F9CC25 /* RLGVoiceRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceRecordViewController.h; sourceTree = "<group>"; };
 		BA50447F209311CF00F9CC25 /* RLGVoiceRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceRecordViewController.m; sourceTree = "<group>"; };
 		BA504481209315D400F9CC25 /* RLGVoiceRecordOperateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceRecordOperateView.h; sourceTree = "<group>"; };
 		BA504482209315D400F9CC25 /* RLGVoiceRecordOperateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceRecordOperateView.m; sourceTree = "<group>"; };
 		BA50448420931C3000F9CC25 /* RLGVoiceRecordTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceRecordTable.h; sourceTree = "<group>"; };
 		BA50448520931C3000F9CC25 /* RLGVoiceRecordTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceRecordTable.m; sourceTree = "<group>"; };
+		BA69746720A0381D002BCDA0 /* KYTestConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTestConfig.m; sourceTree = "<group>"; };
+		BA69746820A0381D002BCDA0 /* KYStartEngineConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYStartEngineConfig.m; sourceTree = "<group>"; };
+		BA69746920A0381D002BCDA0 /* KYTestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTestEngine.m; sourceTree = "<group>"; };
+		BA69746A20A0381D002BCDA0 /* KYStartEngineConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYStartEngineConfig.h; sourceTree = "<group>"; };
+		BA69746B20A0381D002BCDA0 /* KYTestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTestConfig.h; sourceTree = "<group>"; };
+		BA69746C20A0381D002BCDA0 /* KYTestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTestEngine.h; sourceTree = "<group>"; };
+		BA69746E20A0381E002BCDA0 /* KYPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYPlayer.m; sourceTree = "<group>"; };
+		BA69746F20A0381E002BCDA0 /* KYRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYRecorder.h; sourceTree = "<group>"; };
+		BA69747020A0381E002BCDA0 /* KYWavHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYWavHeader.h; sourceTree = "<group>"; };
+		BA69747120A0381E002BCDA0 /* KYPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYPlayer.h; sourceTree = "<group>"; };
+		BA69747220A0381E002BCDA0 /* KYRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYRecorder.m; sourceTree = "<group>"; };
+		BA69747420A0381E002BCDA0 /* skegn.provision */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skegn.provision; sourceTree = "<group>"; };
+		BA69747520A0381E002BCDA0 /* libskegn-0-ios-1.0.11-20180122114347.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libskegn-0-ios-1.0.11-20180122114347.a"; sourceTree = "<group>"; };
+		BA69747620A0381E002BCDA0 /* skegn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skegn.h; sourceTree = "<group>"; };
 		BA8F1D0A209055BF009B6CDD /* RLGVoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceViewController.h; sourceTree = "<group>"; };
 		BA8F1D0B209055BF009B6CDD /* RLGVoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLGVoiceViewController.m; sourceTree = "<group>"; };
 		BA8F1D0D2090568B009B6CDD /* RLGVoiceTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLGVoiceTable.h; sourceTree = "<group>"; };
@@ -284,13 +289,13 @@
 			files = (
 				BA4A264720946AA300B27D0F /* libz.tbd in Frameworks */,
 				BA4A264520946A9B00B27D0F /* libbz2.tbd in Frameworks */,
+				BA69747D20A0381E002BCDA0 /* libskegn-0-ios-1.0.11-20180122114347.a in Frameworks */,
 				BA4A264320946A9100B27D0F /* libiconv.tbd in Frameworks */,
 				BA4A264120946A8600B27D0F /* VideoToolbox.framework in Frameworks */,
 				BA4A263F20946A7900B27D0F /* AudioToolbox.framework in Frameworks */,
 				BA4A263E20946A6C00B27D0F /* CoreMedia.framework in Frameworks */,
 				BAC35A84208F191E0040B251 /* Accelerate.framework in Frameworks */,
 				BAC35A83208F18FD0040B251 /* SystemConfiguration.framework in Frameworks */,
-				BA50447D2092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a in Frameworks */,
 				BAC35A51208E02420040B251 /* libz.1.tbd in Frameworks */,
 				BA4A263C20946A5600B27D0F /* SGPlayer.framework in Frameworks */,
 				3DDEA7CB5850D84A094D9A8B /* Pods_LGResStudyDemo.framework in Frameworks */,
@@ -669,18 +674,46 @@
 		BA50446D2092FB3900F9CC25 /* ShengTong */ = {
 			isa = PBXGroup;
 			children = (
-				BA50446E2092FB3900F9CC25 /* skegn.h */,
-				BA50446F2092FB3900F9CC25 /* aiplayer.h */,
-				BA5044702092FB3900F9CC25 /* native.res */,
-				BA5044712092FB3900F9CC25 /* skeng-ios */,
-				BA5044722092FB3900F9CC25 /* airecorder.c */,
-				BA5044732092FB3900F9CC25 /* skegn.provision */,
-				BA5044742092FB3900F9CC25 /* aiplayer.c */,
-				BA5044752092FB3900F9CC25 /* libskegn-2-ios-1.0.8-20170726120101.a */,
-				BA5044762092FB3900F9CC25 /* airecorder.h */,
-				BA5044772092FB3900F9CC25 /* wavehdr.h */,
+				BA69746D20A0381E002BCDA0 /* KYAudio */,
+				BA69746620A0381D002BCDA0 /* KYEngine */,
+				BA69747320A0381E002BCDA0 /* skegn-ios */,
+				BA69747620A0381E002BCDA0 /* skegn.h */,
 			);
 			path = ShengTong;
+			sourceTree = "<group>";
+		};
+		BA69746620A0381D002BCDA0 /* KYEngine */ = {
+			isa = PBXGroup;
+			children = (
+				BA69746720A0381D002BCDA0 /* KYTestConfig.m */,
+				BA69746820A0381D002BCDA0 /* KYStartEngineConfig.m */,
+				BA69746920A0381D002BCDA0 /* KYTestEngine.m */,
+				BA69746A20A0381D002BCDA0 /* KYStartEngineConfig.h */,
+				BA69746B20A0381D002BCDA0 /* KYTestConfig.h */,
+				BA69746C20A0381D002BCDA0 /* KYTestEngine.h */,
+			);
+			path = KYEngine;
+			sourceTree = "<group>";
+		};
+		BA69746D20A0381E002BCDA0 /* KYAudio */ = {
+			isa = PBXGroup;
+			children = (
+				BA69746E20A0381E002BCDA0 /* KYPlayer.m */,
+				BA69746F20A0381E002BCDA0 /* KYRecorder.h */,
+				BA69747020A0381E002BCDA0 /* KYWavHeader.h */,
+				BA69747120A0381E002BCDA0 /* KYPlayer.h */,
+				BA69747220A0381E002BCDA0 /* KYRecorder.m */,
+			);
+			path = KYAudio;
+			sourceTree = "<group>";
+		};
+		BA69747320A0381E002BCDA0 /* skegn-ios */ = {
+			isa = PBXGroup;
+			children = (
+				BA69747420A0381E002BCDA0 /* skegn.provision */,
+				BA69747520A0381E002BCDA0 /* libskegn-0-ios-1.0.11-20180122114347.a */,
+			);
+			path = "skegn-ios";
 			sourceTree = "<group>";
 		};
 		BA8F1D0620905587009B6CDD /* Model */ = {
@@ -744,7 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				BA50446B2092FB1F00F9CC25 /* RLGSpeechEngine.h */,
-				BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.mm */,
+				BA50446A2092FB1F00F9CC25 /* RLGSpeechEngine.m */,
 			);
 			path = SpeechEngine;
 			sourceTree = "<group>";
@@ -829,11 +862,9 @@
 			files = (
 				BA3B79662084513900C451DA /* LaunchScreen.storyboard in Resources */,
 				BA3B79632084513900C451DA /* Assets.xcassets in Resources */,
+				BA69747C20A0381E002BCDA0 /* skegn.provision in Resources */,
 				BA3B79612084513800C451DA /* Main.storyboard in Resources */,
-				BA5044782092FB3900F9CC25 /* native.res in Resources */,
 				BAC35A89208F54060040B251 /* TestEngineViewController.xib in Resources */,
-				BA5044792092FB3900F9CC25 /* skeng-ios in Resources */,
-				BA50447B2092FB3900F9CC25 /* skegn.provision in Resources */,
 				BA4A263A20946A5600B27D0F /* YJPlayerView.bundle in Resources */,
 				BA3B79792084767E00C451DA /* LGResStudy.bundle in Resources */,
 			);
@@ -891,17 +922,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA69747820A0381E002BCDA0 /* KYStartEngineConfig.m in Sources */,
 				BA4A265B2094740E00B27D0F /* RLGVideoSubtitleViewController.m in Sources */,
 				BAD9D8EF2099C0FE003C0F55 /* RLGVideoDubOperateView.m in Sources */,
 				BA8F1D1520905D4D009B6CDD /* RLGVoiceTableHeader.m in Sources */,
-				BA50447A2092FB3900F9CC25 /* airecorder.c in Sources */,
 				BA504480209311CF00F9CC25 /* RLGVoiceRecordViewController.m in Sources */,
 				BA3B79AB2084C20E00C451DA /* RLGHttpClient.m in Sources */,
 				BA4A2658209473D900B27D0F /* RLGImportantTextViewController.m in Sources */,
-				BA50447C2092FB3900F9CC25 /* aiplayer.c in Sources */,
 				BA4A26612094747A00B27D0F /* RLGVideoDubViewController.m in Sources */,
 				BA4A263620946A5600B27D0F /* YJPlayStatus.m in Sources */,
 				BA3B79C4208599C300C451DA /* RLGConfig.m in Sources */,
+				BA69747720A0381E002BCDA0 /* KYTestConfig.m in Sources */,
 				BA8F1D122090577C009B6CDD /* RLGVoiceTableCell.m in Sources */,
 				BA8F1D212091A907009B6CDD /* RLGSpeechTipView.m in Sources */,
 				BAFBF67220884B2100EC3FCA /* RLGWeakTimer.m in Sources */,
@@ -913,12 +944,13 @@
 				BA8F1D0F2090568B009B6CDD /* RLGVoiceTable.m in Sources */,
 				BA3B79D02085F1A000C451DA /* RLGTextView.m in Sources */,
 				BAC35A87208F2B640040B251 /* TestEngineViewController.m in Sources */,
+				BA69747A20A0381E002BCDA0 /* KYPlayer.m in Sources */,
 				BA3B79B12084C8AC00C451DA /* RLGResStudyViewController.m in Sources */,
 				BA4A263320946A5600B27D0F /* UITabBarController+YJPlayerRotation.m in Sources */,
 				BA4A26542094712700B27D0F /* YJDynamicSegment.m in Sources */,
 				BA3B79692084513900C451DA /* main.m in Sources */,
 				BA3B795B2084513700C451DA /* AppDelegate.m in Sources */,
-				BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.mm in Sources */,
+				BA50446C2092FB1F00F9CC25 /* RLGSpeechEngine.m in Sources */,
 				BA3B79AE2084C40800C451DA /* RLGHttpPresenter.m in Sources */,
 				BA504483209315D400F9CC25 /* RLGVoiceRecordOperateView.m in Sources */,
 				BAF463A82088941500B386BD /* RLGTextOperateView.m in Sources */,
@@ -934,6 +966,7 @@
 				BAD9D8E92099592D003C0F55 /* RLGFlowLabelCell.m in Sources */,
 				BA3B79BC2084CC2300C451DA /* RLGActivityIndicatorAnimation.m in Sources */,
 				BA3B79A12084856700C451DA /* RLGResModel.m in Sources */,
+				BA69747920A0381E002BCDA0 /* KYTestEngine.m in Sources */,
 				BA3B79C72085A51000C451DA /* RLGResStudyPresenter.m in Sources */,
 				BAD9D8E6209956F9003C0F55 /* RLGKnowledgeFlowLayout.m in Sources */,
 				BA4A263220946A5600B27D0F /* YJHeaderView.m in Sources */,
@@ -958,6 +991,7 @@
 				BA3B79D62086F42300C451DA /* RLGWordModel.m in Sources */,
 				BA4A26552094712700B27D0F /* YJSegmentItem.m in Sources */,
 				BA3B79E0208715ED00C451DA /* RLGVoicePlayer.m in Sources */,
+				BA69747B20A0381E002BCDA0 /* KYRecorder.m in Sources */,
 				BAD9D8EC2099A0C7003C0F55 /* RLGVideoDubMainTable.m in Sources */,
 				BA4A263920946A5600B27D0F /* YJFooterView.m in Sources */,
 				BA4A263420946A5600B27D0F /* YJBasePlayerView.m in Sources */,

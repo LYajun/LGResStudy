@@ -75,10 +75,7 @@
             [LGAlert showIndeterminateWithStatus:@"语音服务启动中..."];
             [[RLGSpeechEngine shareInstance] initResult:^(BOOL success) {
                 [LGAlert showSuccessWithStatus:@"语音评测服务已启动"];
-                [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
             }];
-        }else{
-            [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
         }
         self.operateView.isNeedRecord = YES;
     }

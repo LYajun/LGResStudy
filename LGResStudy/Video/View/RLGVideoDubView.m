@@ -217,7 +217,7 @@
 }
 - (void)startRecordWithReftext:(NSString *) refText{
     [self.timer fire];
-    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText];
+    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText markType:RLGSpeechEngineMarkTypeSen];
 }
 - (void)stopTimeer{
     self.timeCount = self.videoModel.Timelength.floatValue/1000+1;

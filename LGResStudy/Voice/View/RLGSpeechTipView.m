@@ -74,7 +74,7 @@
 }
 - (void)startRecordWithReftext:(NSString *) refText{
     [self.timer fire];
-    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText];
+    [[RLGSpeechEngine shareInstance] startEngineAtRefText:refText markType:RLGSpeechEngineMarkTypeSen];
 }
 - (RLGWeakTimer *)timer{
     if (!_timer) {

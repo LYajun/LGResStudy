@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *playbackBtn;
 @property (weak, nonatomic) IBOutlet UILabel *playStateLab;
 @property (weak, nonatomic) IBOutlet UITextView *resultTextView;
+@property (nonatomic,assign) RLGSpeechEngineMarkType markType;
 @end
 
 @implementation TestEngineViewController
@@ -49,13 +50,13 @@
             weakSelf.resultTextView.text = [NSString stringWithFormat:@"得分: %@分",resultModel.totalScore];
         }
     }];
-    [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeWord;
+    self.markType = RLGSpeechEngineMarkTypeWord;
 }
 - (IBAction)segment:(UISegmentedControl *)sender {
     if (sender.selectedSegmentIndex == 0) {
-        [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeWord;
+        self.markType = RLGSpeechEngineMarkTypeWord;
     }else{
-        [RLGSpeechEngine shareInstance].markType = RLGSpeechEngineMarkTypeSen;
+        self.markType = RLGSpeechEngineMarkTypeSen;
     }
 }
 
@@ -70,14 +71,12 @@
     }else{
         self.resultTextView.text = @"";;
         self.playStateLab.text = @"准备录音";
-        [[RLGSpeechEngine shareInstance] startEngineAtRefText:self.refTextField.text];
+        [[RLGSpeechEngine shareInstance] startEngineAtRefText:self.refTextField.text markType:self.markType];
         btn.selected = YES;
     }
 }
 
 - (void)playbackPressed:(UIButton *) btn{
-    [[RLGSpeechEngine shareInstance] playback:^(BOOL success) {
-        
-    }];
+    [[RLGSpeechEngine shareInstance] playback];
 }
 @end

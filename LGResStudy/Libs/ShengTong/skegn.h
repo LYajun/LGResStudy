@@ -1,7 +1,7 @@
 #ifndef SKEGN_H_
 #define SKEGN_H_
 
-#define SKEGN_VERSION "1.0.8"
+#define SKEGN_VERSION "1.0.5"
 
 #if (!(defined SKEGN_CALL) || !(defined SKEGN_IMPORT_OR_EXPORT))
 #    if defined __WIN32__ || defined _WIN32 || defined _WIN64
@@ -11,6 +11,9 @@
 #       else
 #           define SKEGN_IMPORT_OR_EXPORT __declspec(dllimport)
 #       endif
+#    elif defined __ANDROID__ && !defined USE_FRE
+#       define SKEGN_CALL
+#       define SKEGN_IMPORT_OR_EXPORT
 #    else
 #       define SKEGN_CALL
 #       define SKEGN_IMPORT_OR_EXPORT __attribute ((visibility("default")))
@@ -32,14 +35,10 @@ enum {
     SKEGN_OPT_GET_MODULES,
     SKEGN_OPT_GET_TRAFFIC,
 
-#ifndef DISABLE_PROVISION
-#ifdef USE_NATIVE
+#ifdef USE_PROVISION
     SKEGN_SET_WIFI_STATUS,
-#endif
     SKEGN_OPT_GET_PROVISION,
-//#ifdef USE_NATIVE
     SKEGN_GET_SERIAL_NUMBER,
-//#endif
 #endif
     SKEGN_OPT_MAX
 };
@@ -52,7 +51,7 @@ SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_delete(struct skegn *engine);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_start(struct skegn *engine, const char *param, char id[64], skegn_callback callback, const void *usrdata);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_feed(struct skegn *engine, const void *data, int size);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_stop(struct skegn *engine);
-//SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_log(struct skegn *engine, const char *log);
+SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_log(struct skegn *engine, const char *log);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_get_device_id(char device_id[64]);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_cancel(struct skegn *engine);
 SKEGN_IMPORT_OR_EXPORT int SKEGN_CALL skegn_opt(struct skegn *engine, int opt, char *data, int size);
