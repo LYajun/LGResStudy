@@ -33,10 +33,12 @@
  
 ### 1、集成(手动集成)
 - 选择评测方式(外网版，内网版):
+
 	1).master与develop_offline为内网版
+	
 	2).develop_online为外网版
 	
-![外网评测](https://github.com/LYajun/LGResStudy/blob/master/Assets/config_online.png)
+![外网评测](https://github.com/LYajun/LGResStudy/blob/develop_online/Assets/config_online.png)
 
 - 下载项目
 - 将LGResStudy整个文件夹拖入工程中
