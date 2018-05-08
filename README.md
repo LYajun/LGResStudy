@@ -45,14 +45,10 @@
 - Cocoapods添加依赖库
 
 ```objective-c
-platform :ios,'8.0'
-use_frameworks!
-target 'LGResStudyDemo’ do
 pod 'Masonry'
 pod 'MJExtension'
 pod 'LGAlertUtil'
 pod 'LGDic'
-end
 ```
 - Build Phase 添加系统库
 
