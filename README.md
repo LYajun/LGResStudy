@@ -32,6 +32,14 @@
 ## 使用方式
  
 ### 1、集成(手动集成)
+- 选择评测方式(外网版，内网版):
+
+	1).master与develop_offline为内网版
+	
+	2).develop_online为外网版
+	
+![外网评测](https://github.com/LYajun/LGResStudy/blob/develop_offline/Assets/config_offline.png)
+
 - 下载项目
 - 将LGResStudy整个文件夹拖入工程中
 - Cocoapods添加依赖库
@@ -102,3 +110,7 @@ end
 
 ```
 ![调用参数](https://github.com/LYajun/LGResStudy/blob/master/Assets/config2.png)
+
+## 注意点
+
+1、SGPlayer.framework由于超过100M，不能提交github，如需要请联系作者(295688097@qq.com)
