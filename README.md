@@ -109,4 +109,4 @@ pod 'LGDic'
 
 ## 注意点
 
-1、SGPlayer.framework由于超过100M，不能提交github，如需要请联系作者(295688097@qq.com)
+1、SGPlayer.framework由于超过100M，不能提交github，如需要请联系作者
